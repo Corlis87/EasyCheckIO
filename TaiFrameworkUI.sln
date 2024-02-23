@@ -1,0 +1,39 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiaFrameworkCore", "..\TiaFrameworkCore\TiaFrameworkCore.csproj", "{7E25826F-4AB6-4DD3-8E35-1BBB8157B135}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiaFrameworkUI", "..\TiaFrameworkUI\TiaFrameworkUI.csproj", "{52C958AE-8181-42F2-9999-F6E10DD7B4CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiaFrameworkCtrls", "TiaFrameWorkCtrls\TiaFrameworkCtrls.csproj", "{073DC702-2187-4157-97CB-EFB3481C0DF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E25826F-4AB6-4DD3-8E35-1BBB8157B135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E25826F-4AB6-4DD3-8E35-1BBB8157B135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E25826F-4AB6-4DD3-8E35-1BBB8157B135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E25826F-4AB6-4DD3-8E35-1BBB8157B135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52C958AE-8181-42F2-9999-F6E10DD7B4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C958AE-8181-42F2-9999-F6E10DD7B4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52C958AE-8181-42F2-9999-F6E10DD7B4CF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{52C958AE-8181-42F2-9999-F6E10DD7B4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C958AE-8181-42F2-9999-F6E10DD7B4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52C958AE-8181-42F2-9999-F6E10DD7B4CF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{073DC702-2187-4157-97CB-EFB3481C0DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{073DC702-2187-4157-97CB-EFB3481C0DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{073DC702-2187-4157-97CB-EFB3481C0DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{073DC702-2187-4157-97CB-EFB3481C0DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal
