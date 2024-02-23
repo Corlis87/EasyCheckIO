@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiaFrameworkUI.View.f_DigitalInput"
+             Title="Module_50_DigitalInput">
+    <Grid Margin="50">
+        <Frame BackgroundColor="#617485">
+
+            <Grid RowDefinitions="auto" ColumnDefinitions="auto,auto,*,auto">
+                <Grid Grid.Column="0" RowDefinitions="auto,auto" >
+                    <Label Text="1" HeightRequest="20"  WidthRequest="20" Margin="1" />
+                        <Label Text="2" HeightRequest="20"  WidthRequest="20" Grid.Row="1" Margin="1"/>
+                </Grid>
+                <Grid Grid.Column="1" RowDefinitions="auto,auto" >
+                    <Rectangle Fill="green" HeightRequest="20"  WidthRequest="20" Margin="1" />
+                    <Rectangle Fill="green" HeightRequest="20"  WidthRequest="20" Margin="1" Grid.Row="1" />
+                </Grid>
+                <Grid Grid.Column="2" RowDefinitions="auto,auto"    >
+                    <Grid   BackgroundColor="#9FBED6" Margin="1" >
+                        <Label Text="aaa" HeightRequest="20"  WidthRequest="20" HorizontalOptions="Start"  ></Label>
+                        <Label Text="bbb" HeightRequest="20"  WidthRequest="20" HorizontalOptions="End"  ></Label>
+                    </Grid>
+                    <Grid   Grid.Row="1" Margin="1" BackgroundColor="#9FBED6" >
+                        <Label Text="aaa" HeightRequest="20"  WidthRequest="20" HorizontalOptions="Start"  ></Label>
+                        <Label Text="bbb" HeightRequest="20"  WidthRequest="20" HorizontalOptions="End"  ></Label>
+                    </Grid>
+                </Grid>
+                <Grid  Grid.Column="3">
+                    <VerticalStackLayout>
+                        <Rectangle Fill="green" HeightRequest="20"  WidthRequest="20" />
+                        <Rectangle Fill="green" HeightRequest="20"  WidthRequest="20" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>

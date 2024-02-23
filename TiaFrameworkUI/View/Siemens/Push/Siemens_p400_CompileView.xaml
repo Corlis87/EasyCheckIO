@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiaFrameworkUI.View.Siemens_p400_CompileView"
+             xmlns:local="clr-namespace:TiaFrameworkUI.View"
+             xmlns:templates="clr-namespace:TiaFrameworkUI.Templates"          
+             xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+             xmlns:db="clr-namespace:TiaFrameworkCore.Shared._03_DataBlock;assembly=TiaFrameworkCore"
+             xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+             xmlns:view="clr-namespace:TiaFrameworkUI.View"
+              x:DataType="vm:Siemens_p400_CompileViewModel"
+             >
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="auto,*">
+            <Grid>
+            </Grid>
+            <Grid Grid.Column="1"  >
+                <HorizontalStackLayout HorizontalOptions="End" Margin="2" Spacing="10">
+                    <Path VerticalOptions="Center"  Fill="White" Data="{StaticResource search}"    >
+                        <Path.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SearchTagCommand}" />
+                        </Path.GestureRecognizers>
+                    </Path>
+                    <Grid HeightRequest="35" WidthRequest="35" IsVisible="{Binding IsNotConnected}">
+                        <Path VerticalOptions="Center"  Fill="White" Data="{StaticResource compile}"  />
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding CompileCommand}" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                    <Path VerticalOptions="Center" Fill="{Binding ConnectionStatus,Converter={StaticResource { x:Static rs:ConverterKeys.TextColorValueConverter}},ConverterParameter=ConnectionStatus,Mode=OneWay}" Data="{StaticResource disconnect}" >
+                        <Path.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OnlineCommand}" />
+                        </Path.GestureRecognizers>
+                    </Path>
+                    <Path VerticalOptions="Center"  Fill="White" Data="{StaticResource connect}" >
+                        <Path.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OfflineCommand}"  />
+                        </Path.GestureRecognizers>
+                    </Path>
+                </HorizontalStackLayout>
+            </Grid>
+        </Grid>
+    </Shell.TitleView>
+    <Grid  >
+        <Grid RowDefinitions="auto,auto,*">
+            <Grid>
+                <view:t_NotificationView BindingContext="{Binding NotificationViewModel}" />
+            </Grid>
+            <Grid Grid.Row="1">
+            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="5" Padding="10"  >
+                <Frame Padding="5" BorderColor="Transparent" >
+                    <Grid ColumnDefinitions="Auto,Auto" ColumnSpacing="8" HorizontalOptions="Center"  >
+                        <Label Text="{x:Static rs:FASolidIcons.FloppyDisk}"  FontFamily="FASolid" FontSize="25" VerticalTextAlignment="Center" />
+                        <Label Text="Backup" Grid.Column="1"  VerticalTextAlignment="Center" />
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer    Command="{Binding OpenSaveTagsViewModelCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Grid.Column="1" Padding="5" BorderColor="Transparent" >
+                    <Grid ColumnDefinitions="Auto,Auto" ColumnSpacing="8" HorizontalOptions="Center"  >
+                        <Label Text="{x:Static rs:FASolidIcons.FolderOpen}"  FontFamily="FASolid" FontSize="25" VerticalTextAlignment="Center" />
+                        <Label Text="Restore" Grid.Column="1"  VerticalTextAlignment="Center" />
+                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer    Command="{Binding OpenLoadTagsViewModelCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" >
+            <CollectionView  ItemsSource="{Binding Path=Tags}"  
+                             SelectionMode="None" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate  >
+                        <local:t_TagBoxView BindingContext="{Binding}" Padding="10" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Grid>
+    </Grid>
+</ContentPage>

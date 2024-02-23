@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiaFrameworkUI.View.TagConversion"
+                xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"                
+                  Title="MyPopupPage" BackgroundColor="#EAEBEE" CloseWhenBackgroundIsClicked="True" >
+    <mopups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation
+            DurationIn="700"
+            EasingIn="BounceOut"
+            PositionIn="Bottom"
+            PositionOut="Center"
+            ScaleIn="1"
+            ScaleOut="0.7" />
+    </mopups:PopupPage.Animation>
+    <Border WidthRequest="300" HeightRequest="100"
+                Stroke="#7F7F7F"
+                BackgroundColor="#EAEBEE"
+                HorizontalOptions="Center">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="10,0,0,10"/>
+        </Border.StrokeShape>
+        <VerticalStackLayout Spacing="3" Padding="20">
+            <Label 
+                    Text="Conversion"
+                    FontSize="Title"
+                    TextColor="{StaticResource BackgroundButtonColor}"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+            <Label
+                    Padding="10"
+                     TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Text="{Binding Binary}" />
+        </VerticalStackLayout>
+    </Border>
+</mopups:PopupPage>

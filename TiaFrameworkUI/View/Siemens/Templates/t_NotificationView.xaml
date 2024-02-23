@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+             x:Class="TiaFrameworkUI.View.t_NotificationView">
+    <ContentView.Style>
+        <Style TargetType="ContentView">
+            <Style.Triggers>
+                <DataTrigger TargetType="ContentView" Binding="{Binding IsVisible}" Value="True">
+                    <Setter Property="IsVisible" Value="True" />
+                </DataTrigger>
+                <DataTrigger TargetType="ContentView" Binding="{Binding IsVisible}" Value="False">
+                    <Setter Property="IsVisible" Value="False" />
+                </DataTrigger>
+            </Style.Triggers> 
+        </Style>
+    </ContentView.Style>
+    <Border>
+        <Border.Style>
+            <Style TargetType="Border" >
+                <Style.Triggers>
+                    <DataTrigger TargetType="Border" Binding="{Binding IsError}" Value="True">
+                        <Setter Property="BackgroundColor" Value="red" />
+                    </DataTrigger>
+                    <DataTrigger TargetType="Border" Binding="{Binding IsError}" Value="False">
+                        <Setter Property="BackgroundColor" Value="green" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+        <Grid ColumnDefinitions="*,auto">
+            <Label Grid.Column="0"
+      HorizontalOptions="Center"
+      VerticalOptions="Center"
+      TextColor="White"
+      Text="{Binding Message}" />
+            <Button
+               Grid.Column="1" 
+                Padding="0"
+    Command="{Binding HideNotificationCommand}"
+    HorizontalOptions="End"                                   
+    Text="{x:Static rs:FASolidIcons.Xmark}"  FontFamily="FASolid" FontSize="25" TextColor="white"
+    Background="Transparent" >
+            </Button>
+        </Grid>
+        </Border>
+      
+</ContentView>

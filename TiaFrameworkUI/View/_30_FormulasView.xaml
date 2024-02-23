@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiaFrameworkUI.View._30_FormulasView"
+             xmlns:ctrl="clr-namespace:TiaFrameworkCtrls.Controls;assembly=TiaFrameworkCtrls"
+             Title="Formulas">
+    <Grid  >
+        <VerticalStackLayout Spacing="10" Margin="5,5,5,0">
+            <Button Text="Proportion" Command="{Binding ProportionalViewCommand}" />
+            <Button Text="Inverter" Command="{Binding InverterViewCommand}" />
+            <!--<Button Text="ABB" Command="{Binding AbbPageCommand}" />-->
+            <!--<ctrl:Button Text="red"  StrokeThickness="1" Stroke="red"  ></ctrl:Button>
+            <Slider 
+                                x:Name="ValueSlider"
+                                Grid.Row="1"
+                                Maximum="1"
+                                Minimum="0"
+                                Value="0.5" />
+            <ctrl:ProgressBar
+                WidthRequest="100"
+                HeightRequest="20"
+                EnableAnimations="False"
+                    Margin="12"
+                    IsVertical="False"
+                    ProgressBrush="blue"
+                    StrokeBrush="LightBlue"
+                MaximumValue="1"
+                MinimumValue="0"
+                    Progress="{Binding Source={x:Reference ValueSlider}, Path=Value, StringFormat='{0:F2}'}"/>-->
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

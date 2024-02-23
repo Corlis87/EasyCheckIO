@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiaFrameworkUI.View.Formulas_p200_InverterView"
+             xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+             Title="Inverter"
+             x:DataType="vm:Formulas_p200_InverterViewModel"
+             >
+    <Grid RowDefinitions="auto,auto">
+        <Grid>
+            <Frame Margin="10">
+                <VerticalStackLayout >
+                    <Label Text="Motor Data" FontSize="Title" VerticalTextAlignment="Center"  />
+                <Grid ColumnDefinitions="auto,*"   >
+                    <Label Text="Current:" WidthRequest="100" VerticalTextAlignment="Center" Margin="0,0,0,10" />
+                    <Entry Text="{Binding Current}"   Grid.Column="1"  />
+                </Grid>
+                <Grid ColumnDefinitions="auto,*"   >
+                        <Label Text="Voltage:" WidthRequest="100" VerticalTextAlignment="Center" Margin="0,0,0,10"  />
+                    <Entry  Grid.Column="1" Text="{Binding Voltage}" />
+                </Grid>
+                <Grid ColumnDefinitions="auto,*"   >
+                        <Label Text="Frequency:" WidthRequest="100" VerticalTextAlignment="Center" Margin="0,0,0,10"  />
+                    <Entry  Grid.Column="1" Text="{Binding Frequency}"  />
+                </Grid>
+                <Grid ColumnDefinitions="auto,*"   >
+                        <Label Text="Rpm:" WidthRequest="100" VerticalTextAlignment="Center" Margin="0,0,0,10"  />
+                    <Entry  Grid.Column="1" Text="{Binding Rpm}"  />
+                </Grid>
+                <Grid ColumnDefinitions="auto,*"   >
+                        <Label Text="Power:" WidthRequest="100" VerticalTextAlignment="Center" Margin="0,0,0,10"  />
+                    <Entry  Grid.Column="1" Text="{Binding Power}"  />
+                </Grid>
+                <Grid ColumnDefinitions="auto,*"   >
+                        <Label Text="Cosfi:" WidthRequest="100" VerticalTextAlignment="Center" Margin="0,0,0,10"  />
+                    <Entry  Grid.Column="1" Text="{Binding Cosfi}"  />
+                </Grid>
+                <Grid ColumnDefinitions="auto,*"   >
+                        <Label Text="Maximum Frequency:" WidthRequest="100" VerticalTextAlignment="Center" Margin="0,0,0,10"  />
+                    <Entry  Grid.Column="1" Text="{Binding MaximumFrequency}" />
+                </Grid>
+                <Button Text="Calculate" Command="{Binding CalculateCommand}" BackgroundColor="{StaticResource Gray200}" TextColor="WhiteSmoke" />
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+        <Grid Grid.Row="1">
+            <VerticalStackLayout>
+                <VerticalStackLayout.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="VerticalTextAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="0,0,0,10" />
+                    </Style>
+                </VerticalStackLayout.Resources>
+             
+                <Grid ColumnDefinitions="auto,auto,*"   >
+                    <Label Text="30.25 |" />
+                    <Label Text="Maximum Start Current:" Grid.Column="1" WidthRequest="200" />
+                    <Label Grid.Column="2"  Text="{Binding MaximumStartCurrent}"   />
+                </Grid>
+                <Grid ColumnDefinitions="auto,auto,*"   >
+                    <Label Text="30.27 |" />
+                    <Label Text="Maximum Current:" Grid.Column="1" WidthRequest="200" />
+                    <Label Grid.Column="2" Text="{Binding MaximumCurrent}"  />
+                </Grid>
+                <Grid ColumnDefinitions="auto,auto,*"   >
+                    <Label Text="46.01 |" />
+                    <Label Text="Speed Scaling:" Grid.Column="1" WidthRequest="200" />
+                    <Label Grid.Column="2" Text="{Binding MaximumSpeed}" />
+                </Grid>
+            </VerticalStackLayout>  
+        </Grid>           
+    </Grid>
+</ContentPage>

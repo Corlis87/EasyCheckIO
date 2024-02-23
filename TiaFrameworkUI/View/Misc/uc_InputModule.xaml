@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:TiaFrameworkUI.View"
+                  xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+             xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+             x:DataType="vm:t_S7TagViewModel" 
+             x:Name="this"
+             x:Class="TiaFrameworkUI.View.uc_InputModule"  >
+    <ContentView.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#BCC2CD"/>
+        </Style>
+        <Style TargetType="Span">
+            <Setter Property="TextColor" Value="#BCC2CD"/>
+        </Style>
+    </ContentView.Resources>
+    <Grid RowDefinitions="*,auto,*">
+        <!--<Label Text="{Binding ModuleName,Source={x:Reference this}}" HorizontalOptions="Center" Grid.ColumnSpan="2" Padding="10"  />-->
+        <Grid  Grid.Row="1" ColumnDefinitions="*,*" RowDefinitions="auto,auto,auto" WidthRequest="100" BackgroundColor="#617485"   >
+        <Label Text="DI" HorizontalOptions="Center" Grid.ColumnSpan="2" Padding="5"  />
+            <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="3"  StrokeThickness="2" Stroke="#3C4751"   />
+            <VerticalStackLayout Spacing="10" IsVisible="true"  HorizontalOptions="Start"  Margin="3,5,0,0" Grid.Row="1"  >
+                            <HorizontalStackLayout>
+                    <Rectangle  WidthRequest="10" HeightRequest="10"   BackgroundColor="{Binding Content,Converter={StaticResource  {x:Static rs:ConverterKeys.ByteToBitConverter}},ConverterParameter=0}"  >
+
+                                </Rectangle>
+                                <Label >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text=" I" />
+                                    <Span Text="{Binding Byte}" />
+                                                <Span Text=".0"  />
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                    <Rectangle  WidthRequest="10" HeightRequest="10"   BackgroundColor="{Binding Content,Converter={StaticResource  {x:Static rs:ConverterKeys.ByteToBitConverter}},ConverterParameter=2}"  />
+                    <Label >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text=" I" />
+                                <Span Text="{Binding Byte}" />
+                                <Span Text=".2"  />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Rectangle  WidthRequest="10" HeightRequest="10"   BackgroundColor="{Binding Content,Converter={StaticResource  {x:Static rs:ConverterKeys.ByteToBitConverter}},ConverterParameter=4}"  />
+                    <Label  >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text=" I" />
+                                    <Span Text="{Binding Byte}" />
+                                    <Span Text=".4"  />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Rectangle  WidthRequest="10" HeightRequest="10"   BackgroundColor="{Binding Content,Converter={StaticResource  {x:Static rs:ConverterKeys.ByteToBitConverter}},ConverterParameter=6}"  />
+                    <Label >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text=" I" />
+                                    <Span Text="{Binding Byte}" />
+                                    <Span Text=".6"  />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout Spacing="10" IsVisible="true"  HorizontalOptions="End"  Margin="0,5,3,0" Grid.Column="1" Grid.Row="1"   >
+                <HorizontalStackLayout>
+                    <Label >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="I" />
+                                    <Span Text="{Binding Byte}" />
+                                    <Span Text=".1 "  />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Rectangle  WidthRequest="10" HeightRequest="10"   BackgroundColor="{Binding Content,Converter={StaticResource  {x:Static rs:ConverterKeys.ByteToBitConverter}},ConverterParameter=1}"  />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="I" />
+                                    <Span Text="{Binding Byte}" />
+                                    <Span Text=".3 "  />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Rectangle  WidthRequest="10" HeightRequest="10"   BackgroundColor="{Binding Content,Converter={StaticResource  {x:Static rs:ConverterKeys.ByteToBitConverter}},ConverterParameter=3}"  />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="I" />
+                                    <Span Text="{Binding Byte}" />
+                                    <Span Text=".5 "  />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Rectangle  WidthRequest="10" HeightRequest="10"   BackgroundColor="{Binding Content,Converter={StaticResource  {x:Static rs:ConverterKeys.ByteToBitConverter}},ConverterParameter=5}"  />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="I" />
+                                    <Span Text="{Binding Byte}" />
+                                    <Span Text=".7 "  />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Rectangle  WidthRequest="10" HeightRequest="10"   BackgroundColor="{Binding Content,Converter={StaticResource  {x:Static rs:ConverterKeys.ByteToBitConverter}},ConverterParameter=7}"  />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <Label Text="DI 8x24VDC" HorizontalOptions="Center" Grid.ColumnSpan="2" Grid.Row="3"   />
+        </Grid>
+      
+    </Grid>
+</ContentView>

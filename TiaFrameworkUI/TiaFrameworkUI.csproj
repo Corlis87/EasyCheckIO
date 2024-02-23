@@ -1,0 +1,238 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0-ios;net8.0-maccatalyst;net8.0-android</TargetFrameworks>
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+    <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+    <!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TiaFrameworkUI</RootNamespace>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Display name -->
+    <ApplicationTitle>TiaFrameworkUI</ApplicationTitle>
+    <!-- App Identifier -->
+    <ApplicationId>com.companyname.tiaframeworkui</ApplicationId>
+    <ApplicationIdGuid>c1316231-f2fd-4626-88d5-9e6b89cd0583</ApplicationIdGuid>
+    <!-- Versions -->
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+    <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- App Icon -->
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+    <!-- Splash Screen -->
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+    <!-- Images -->
+    <MauiImage Include="Resources\Images\*" />
+    <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+    <!-- Custom Fonts -->
+    <MauiFont Include="Resources\Fonts\*" />
+    <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Fonts\fa-brands-400.ttf" />
+    <None Remove="Resources\Fonts\fa-regular-400.ttf" />
+    <None Remove="Resources\Fonts\fa-solid-900.ttf" />
+    <None Remove="Resources\Fonts\FontAwesome6Brand.otf" />
+    <None Remove="Resources\Fonts\FontAwesome6FreeRegular400.otf" />
+    <None Remove="Resources\Fonts\FontAwesome6FreeSolid900.otf" />
+    <None Remove="Resources\Images\allenbradley.png" />
+    <None Remove="Resources\Images\BabelWhite.png" />
+    <None Remove="Resources\Images\book.svg" />
+    <None Remove="Resources\Images\clearall.svg" />
+    <None Remove="Resources\Images\cloud.svg" />
+    <None Remove="Resources\Images\compile.svg" />
+    <None Remove="Resources\Images\connect.svg" />
+    <None Remove="Resources\Images\convert.svg" />
+    <None Remove="Resources\Images\device_background.svg" />
+    <None Remove="Resources\Images\disconnect.svg" />
+    <None Remove="Resources\Images\eletronicchip.svg" />
+    <None Remove="Resources\Images\excel.svg" />
+    <None Remove="Resources\Images\floppy.svg" />
+    <None Remove="Resources\Images\gear.svg" />
+    <None Remove="Resources\Images\home.svg" />
+    <None Remove="Resources\Images\import_file.svg" />
+    <None Remove="Resources\Images\math.svg" />
+    <None Remove="Resources\Images\module_di.png" />
+    <None Remove="Resources\Images\more.svg" />
+    <None Remove="Resources\Images\numbered_list.svg" />
+    <None Remove="Resources\Images\plc.png" />
+    <None Remove="Resources\Images\plus.svg" />
+    <None Remove="Resources\Images\scaling.svg" />
+    <None Remove="Resources\Images\search.svg" />
+    <None Remove="Resources\Images\tia.svg" />
+    <None Remove="Resources\Images\wifi.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AppoMobi.Maui.Gestures" Version="1.0.5.3" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+    <PackageReference Include="Mopups" Version="1.3.0" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.6" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TiaFrameworkCore\TiaFrameworkCore.csproj" />
+    <ProjectReference Include="..\TiaFrameWorkCtrls\TiaFrameworkCtrls.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\Formulas\Push\Formulas_p200_InverterView.xaml.cs">
+      <DependentUpon>Formulas_p200_InverterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Templates\t_NotificationView.xaml.cs">
+      <DependentUpon>t_NotificationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Templates\t_SaveTagsView.xaml.cs">
+      <DependentUpon>t_SaveTagsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Faceplate\f_DigitalInput.xaml.cs">
+      <DependentUpon>f_DigitalInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\_40_AllendBradleyView.xaml.cs">
+      <DependentUpon>_40_AllendBradleyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\_90_MoreMenuView.xaml.cs">
+      <DependentUpon>_90_MoreMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\_30_FormulasView.xaml.cs">
+      <DependentUpon>_30_FormulasView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Formulas\Push\Formulas_p100_ProportionView.xaml.cs">
+      <DependentUpon>Formulas_p100_ProportionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\_10_SiemensView.xaml.cs">
+      <DependentUpon>_10_SiemensView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Modal\Siemens_m200_EditorView.xaml.cs">
+      <DependentUpon>Siemens_m200_EditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Modal\Siemens_m100_ConfigView.xaml.cs">
+      <DependentUpon>Siemens_m100_ConfigView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\_00_MainView.xaml.cs">
+      <DependentUpon>_00_MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Push\Siemens_p400_CompileView.xaml.cs">
+      <DependentUpon>Siemens_p400_CompileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Push\Siemens_p300_NetConfigView.xaml.cs">
+      <DependentUpon>Siemens_p300_NetConfigView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Push\Siemens_p410_SearchView.xaml.cs">
+      <DependentUpon>Siemens_p410_SearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Templates\t_PartialModulesCollectionView.xaml.cs">
+      <DependentUpon>t_PartialModulesCollectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Templates\t_PartialModuleView.xaml.cs">
+      <DependentUpon>t_PartialModuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Siemens\Templates\t_TagBoxView.xaml.cs">
+      <DependentUpon>t_TagBoxView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <MauiXaml Update="Resources\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Resources\Styles\SvgIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Misc\MessageNotifyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Faceplate\f_SelectFileMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Templates\t_NotificationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Push\Siemens_p420_LoadTagsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Templates\t_SaveTagsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Faceplate\f_DigitalInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\_30_FormulasView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Formulas\Push\Formulas_p100_ProportionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Formulas\Push\Formulas_p200_InverterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Modal\Siemens_m100_ConfigView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Modal\Siemens_m200_EditorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Push\Siemens_p400_CompileView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Push\Siemens_p300_NetConfigView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Push\Siemens_p410_SearchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Templates\t_PartialModuleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Templates\t_PartialModulesCollectionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\_10_SiemensView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\_40_AllendBradleyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\_50_ExcelView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\_90_MoreMenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\_00_MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Misc\Scaling.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Misc\TagConversion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Siemens\Templates\t_TagBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Misc\uc_InputModule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="View\Misc\TagBoxSelectionType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
+    <PackageReference Include="CarouselView.Maui">
+      <Version>1.0.6</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\Formulas\Modal\" />
+    <Folder Include="View\Formulas\Faceplate\" />
+    <Folder Include="View\Formulas\Templates\" />
+  </ItemGroup>
+</Project>

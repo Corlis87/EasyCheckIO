@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiaFrameworkUI.View.t_PartialModulesCollectionView"
+              xmlns:local="clr-namespace:TiaFrameworkUI.View"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+               x:DataType="vm:t_PartialModulesCollectionViewModel" 
+             BackgroundColor="{StaticResource PageBackgroundColor}"
+             >
+    <Grid  >
+        <CollectionView   
+                ItemsSource="{Binding  Tags}" 
+                SelectionMode="None" 
+                EmptyView="No data available" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <local:t_PartialModuleView BindingContext="{Binding}" Padding="10"    />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentView>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TiaFrameworkUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:TiaFrameworkUI.View"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    Shell.TabBarIsVisible="False"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    Shell.FlyoutBehavior="Flyout"
+    Title="ContactBookMaui" >
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout StyleClass="PrimaryContainer" Padding="20">
+            <Label Text="&#xf535;" FontFamily="FontAwesome6Solid"  FontSize="Large" HorizontalTextAlignment="Center" Margin="10" />
+
+            <Label Text="App" HorizontalOptions="Center"/>
+
+                <Label Text="PLC Check I/O" HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+   ContentTemplate="{DataTemplate view:_00_MainView}"
+   Route="_00_MainView"
+   Title="Home"
+   Icon="home.png" />
+        <ShellContent
+   ContentTemplate="{DataTemplate view:_10_SiemensView}"
+   Title="Siemens"    
+   Route="_10_SiemensView"
+   Icon="tia.png"    />
+        <ShellContent
+   ContentTemplate="{DataTemplate view:_40_AllendBradleyView}"
+   Title="AllenBradley"    
+   Route="_40_AllendBradleyView"
+   Icon="allenbradley.png" />
+        <ShellContent
+   ContentTemplate="{DataTemplate view:_30_FormulasView}"
+   Title="Formulas"    
+   Route="_30_FormulasView"
+   Icon="math.png"    />
+        <ShellContent
+    ContentTemplate="{DataTemplate view:_50_ExcelView}"
+    Title="Excel"    
+    Route="Excel"
+    Icon="excel.png" />
+    </FlyoutItem>
+
+</Shell>
