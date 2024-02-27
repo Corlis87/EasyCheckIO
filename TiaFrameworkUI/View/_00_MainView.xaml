@@ -23,7 +23,7 @@
                 <Label Text="-Aggiunto lettura/scrittura rockwell " FontSize="Caption" />
                 <Label Text="Version 0.0.1" FontSize="Subtitle" />
                 <Label Text="-Aggiunto Formulario" FontSize="Caption" />
-                <Label Text="-Aggiunto Abb Formulario" FontSize="Caption" />
+                <Label Text="-Aggiunto Formulario" FontSize="Caption" />
             </StackLayout>
         </Grid>
     </Grid>
