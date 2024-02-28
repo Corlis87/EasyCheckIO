@@ -45,6 +45,11 @@
     Title="Excel"    
     Route="Excel"
     Icon="excel.png" />
+        <ShellContent
+ContentTemplate="{DataTemplate view:_60_OpcView}"
+Title="Opc"    
+Route="Opc"
+Icon="excel.png" />
     </FlyoutItem>
 
 </Shell>

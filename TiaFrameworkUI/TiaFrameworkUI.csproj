@@ -203,6 +203,9 @@
     <MauiXaml Update="View\_50_ExcelView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="View\_60_OpcView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="View\_90_MoreMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

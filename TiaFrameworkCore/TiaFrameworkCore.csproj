@@ -25,6 +25,7 @@
     <Folder Include="ViewModel\Excel\" />
     <Folder Include="ViewModel\Formulas\Model\" />
     <Folder Include="ViewModel\Formulas\Template\" />
+    <Folder Include="ViewModel\Opc\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AsyncAwaitBestPractices" Version="7.0.0" />
