@@ -112,6 +112,10 @@ namespace TiaFrameworkUI
             builder.Services.AddTransient<_50_ExcelView>(
              s => new _50_ExcelView(s.GetRequiredService<_50_ExcelViewModel>()));
 
+            builder.Services.AddTransient<_60_OpcViewModel>();
+            builder.Services.AddTransient<_60_OpcView>(
+             s => new _60_OpcView(s.GetRequiredService<_60_OpcViewModel>()));
+
 
             return builder.Build();
 
