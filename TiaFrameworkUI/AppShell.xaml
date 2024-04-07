@@ -13,9 +13,8 @@
         <VerticalStackLayout StyleClass="PrimaryContainer" Padding="20">
             <Label Text="&#xf535;" FontFamily="FontAwesome6Solid"  FontSize="Large" HorizontalTextAlignment="Center" Margin="10" />
 
-            <Label Text="App" HorizontalOptions="Center"/>
 
-                <Label Text="PLC Check I/O" HorizontalOptions="Center" />
+                <Label Text="ZcheckIO" HorizontalOptions="Center" />
 
         </VerticalStackLayout>
     </Shell.FlyoutHeader>
@@ -40,7 +39,7 @@
    Title="Formulas"    
    Route="_30_FormulasView"
    Icon="math.png"    />
-        <ShellContent
+        <!--<ShellContent
     ContentTemplate="{DataTemplate view:_50_ExcelView}"
     Title="Excel"    
     Route="Excel"
@@ -49,7 +48,7 @@
 ContentTemplate="{DataTemplate view:_60_OpcView}"
 Title="Opc"    
 Route="Opc"
-Icon="excel.png" />
+Icon="excel.png" />-->
     </FlyoutItem>
 
 </Shell>

@@ -24,12 +24,14 @@ namespace TiaFrameworkCore.ViewModel
 {
     public partial class Siemens_p400_CompileViewModel : BaseViewModel
     {
+        #region Field
+
         private readonly IS7Lgc _S7Lgc;
         private readonly ICoreServices _CoreServices;
-
         private IInterrupt InterruptRefresh;
 
-     
+        #endregion
+
         #region Properties
 
         #region Tags
@@ -47,7 +49,7 @@ namespace TiaFrameworkCore.ViewModel
         #region IsNotConnected
 
         [ObservableProperty]
-         bool _IsNotConnected = true;
+        bool _IsNotConnected = true;
 
         #endregion
 
@@ -60,22 +62,21 @@ namespace TiaFrameworkCore.ViewModel
             get { return _notificationVM; }
             set
             {
-               SetProperty(ref _notificationVM, value);
+                SetProperty(ref _notificationVM, value);
             }
         }
         #endregion
 
         #endregion
 
-
         #region ctr
-        public Siemens_p400_CompileViewModel(ICoreServices coreServices,IS7Lgc s7Lgc,NotificationStore notificationStore) : base(coreServices)
+        public Siemens_p400_CompileViewModel(ICoreServices coreServices, IS7Lgc s7Lgc, NotificationStore notificationStore) : base(coreServices)
         {
             NotificationViewModel = new t_NotificationViewModel(notificationStore);
             _S7Lgc = s7Lgc;
             _CoreServices = coreServices;
-         //  InterruptRefresh = InterruptManager.Initialize(1000, false, 0, RefreshUI);
-         //  InterruptRefresh.Restart();
+            //  InterruptRefresh = InterruptManager.Initialize(1000, false, 0, RefreshUI);
+            //  InterruptRefresh.Restart();
         }
 
         #endregion
@@ -88,7 +89,7 @@ namespace TiaFrameworkCore.ViewModel
         public async Task Compile()
         {
             var result = _S7Lgc.CompileS7Tags();
-           await MessageService.DisplayAlert("Compile", result.Message);
+            await MessageService.DisplayAlert("Compile", result.Message);
         }
         #endregion
 
@@ -96,7 +97,7 @@ namespace TiaFrameworkCore.ViewModel
         [RelayCommand]
         public async Task Online()
         {
-            OperationResult result=new OperationResult();
+            OperationResult result = new OperationResult();
             ConnectionStatus = 1;
             await Task.Run(() =>
             {
@@ -120,7 +121,6 @@ namespace TiaFrameworkCore.ViewModel
         }
         #endregion
 
-
         #region Offline
         [RelayCommand]
         public void Offline()
@@ -134,24 +134,28 @@ namespace TiaFrameworkCore.ViewModel
             }
             else
                 MessageService.DisplayAlert("Message", " Fail to disconnected from PLC");
-            
+
 
         }
         #endregion
 
         #region OpenSavePopout
         [RelayCommand]
-        public async Task  OpenSaveTagsViewModel()
+        public async Task OpenSaveTagsViewModel()
         {
-            await  NavigationService.NavigateToSaveTags(Tags);
+            await NavigationService.NavigateToSaveTags(Tags);
         }
         #endregion
+
+        #region OpenLoadTagsViewModel
 
         [RelayCommand]
         public async Task OpenLoadTagsViewModel()
         {
             await NavigationService.NavigateToLoadFileView();
         }
+
+        #endregion
 
         #region SearchTag
         [RelayCommand]
@@ -161,6 +165,7 @@ namespace TiaFrameworkCore.ViewModel
         }
 
         #endregion
+
         #endregion
     }
 }
