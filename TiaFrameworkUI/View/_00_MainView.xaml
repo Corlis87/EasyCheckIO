@@ -11,18 +11,12 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <VerticalStackLayout HorizontalOptions="Center">
-            <Label Text="&#xf535;" Margin="10"  FontFamily="FontAwesome6Solid" FontSize="62" />
-            <Label Text="PLC Check I/O" />
+            <Image Source="../Images/kiwi.svg" HeightRequest="150"   />
+            <Label Text="ZcheckIO" HorizontalTextAlignment="Center" />
         </VerticalStackLayout>
         <Grid Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-                <Label Text="This app is written in C# For Testing I/O" />
-                <Label Text="Version 0.0.3" FontSize="Subtitle" />
-                <Label Text="-Aggiunto Backup/Restore" FontSize="Caption" />
-                <Label Text="Version 0.0.2" FontSize="Subtitle" />
-                <Label Text="-Aggiunto lettura/scrittura rockwell " FontSize="Caption" />
-                <Label Text="Version 0.0.1" FontSize="Subtitle" />
-                <Label Text="-Aggiunto Formulario" FontSize="Caption" />
+                <Label Text="This app is written for testing input and output" />
             </StackLayout>
         </Grid>
     </Grid>

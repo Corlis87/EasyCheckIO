@@ -42,7 +42,7 @@ namespace TiaFrameworkCore.Siemens._30_Lgc
             ViewValue = new();
             _S7Com = s7Com;
             _S7Com.TagsChanged += TagsChangedEvent;
-            _FileSaver= filesaver;
+            _FileSaver = filesaver;
         }
         #endregion
 
@@ -64,6 +64,7 @@ namespace TiaFrameworkCore.Siemens._30_Lgc
 
         #endregion
 
+
         #region CompileS7Var
         public OperationResult CompileS7Tags()
         {
@@ -75,7 +76,7 @@ namespace TiaFrameworkCore.Siemens._30_Lgc
             }
             RefreshTagsView();
             _S7Com.CalculateBuffer(DB.Tags);
-            return new OperationResult(0, "Compile Success", true);          
+            return new OperationResult(0, "Compile Success", true);
 
         }
 
@@ -123,7 +124,7 @@ namespace TiaFrameworkCore.Siemens._30_Lgc
         private void TagsChangedEvent()
         {
             _S7Com.CreateContentFromVariableList(DB.Tags);
-          
+
             if (DB.Tags != null && DB.Tags.Count > 0)
                 for (int i = 0; i < DB.Tags.Count; i++)
                 {

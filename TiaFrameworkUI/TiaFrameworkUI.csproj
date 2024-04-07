@@ -60,6 +60,7 @@
     <None Remove="Resources\Images\gear.svg" />
     <None Remove="Resources\Images\home.svg" />
     <None Remove="Resources\Images\import_file.svg" />
+    <None Remove="Resources\Images\kiwi.svg" />
     <None Remove="Resources\Images\math.svg" />
     <None Remove="Resources\Images\module_di.png" />
     <None Remove="Resources\Images\more.svg" />

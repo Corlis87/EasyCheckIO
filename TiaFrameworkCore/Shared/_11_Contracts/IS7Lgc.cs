@@ -22,5 +22,6 @@ namespace TiaFrameworkCore.Shared._11_Contracts
         void RefreshTagsView();
         void RefreshTagsView(IEnumerable<S7Tag> taglist);
         OperationResult CompileS7Tags(List<S7Tag> s7Tags);
+
     }
 }

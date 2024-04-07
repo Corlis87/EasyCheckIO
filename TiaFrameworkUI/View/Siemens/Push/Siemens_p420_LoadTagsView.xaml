@@ -7,7 +7,7 @@
              xmlns:views="clr-namespace:TiaFrameworkUI.View"
              xmlns:touch="clr-namespace:AppoMobi.Maui.Gestures;assembly=AppoMobi.Maui.Gestures"
              x:Name="this"
-             Title="Backup"   >
+             Title="Restore"   >
     <Grid RowDefinitions="auto,*,auto" ColumnDefinitions="*,auto">
         <Grid Grid.ColumnSpan="2" >
             <views:MessageNotifyView BindingContext="{Binding MessageNotifyViewModel}" />
@@ -31,7 +31,7 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Image Source="plc.png"  VerticalOptions="Center" HeightRequest="45"  />
-                        <Label Grid.Column="1" Text="{Binding}"    VerticalTextAlignment="Center" ></Label>
+                        <Label Grid.Column="1" Text="{Binding}"  TextColor="DarkGreen"   VerticalTextAlignment="Center" ></Label>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

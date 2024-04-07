@@ -102,39 +102,61 @@ namespace TiaFrameworkCore.Siemens._30_Lgc
  
             foreach (var module in s7ModulesList)
             {
-                    switch (module.IO)
-                    {
-                        case eS7io.Input:
-                        if (InputByteMax < module.Byte)
-                            InputByteMax = module.Byte;
+                switch (module.IO)
+                {
+                    case eS7io.Input:
+                    case eS7io.AnalogicInput:
+                        if (InputByteMax <= module.Byte)
+                            InputByteMax = module.Byte + 4;
                         if (module.Byte < InputByteMin)
                             InputByteMin = module.Byte;
                         IsInputOnList = true;
-                        break;
-                        case eS7io.AnalogicInput:
-                                if (InputByteMax < module.Byte)
-                                    InputByteMax = module.Byte+4;
-                                if (module.Byte < InputByteMin)
-                                    InputByteMin = module.Byte;
-                        IsInputOnList = true;                      
-                        break;
-                        case eS7io.Output:
-                        if (OutputByteMax < module.Byte)
+                        break;                  
+                    case eS7io.Output:
+                    case eS7io.AnalogicOutput:
+                        if (OutputByteMax <= module.Byte)
                             OutputByteMax = module.Byte;
                         if (module.Byte < OutputByteMin)
                             OutputByteMin = module.Byte;
                         IsOutputOnList = true;
                         break;
-                    case eS7io.AnalogicOutput:
-                                if (OutputByteMax < module.Byte)
-                                    OutputByteMax = module.Byte + 4;
-                                if (module.Byte < OutputByteMin)
-                                    OutputByteMin = module.Byte;   
-                                IsOutputOnList = true;
-                        break;
-                    }  
-
                 }
+
+
+
+                //switch (module.IO)
+                //{
+                //    case eS7io.Input:
+                //    if (InputByteMax <= module.Byte)
+                //        InputByteMax = module.Byte+4;
+                //    if (module.Byte < InputByteMin)
+                //        InputByteMin = module.Byte;
+                //    IsInputOnList = true;
+                //    break;
+                //    case eS7io.AnalogicInput:
+                //            if (InputByteMax <= module.Byte)
+                //                InputByteMax = module.Byte+4;
+                //            if (module.Byte < InputByteMin)
+                //                InputByteMin = module.Byte;
+                //    IsInputOnList = true;                      
+                //    break;
+                //    case eS7io.Output:
+                //    if (OutputByteMax <= module.Byte)
+                //        OutputByteMax = module.Byte;
+                //    if (module.Byte < OutputByteMin)
+                //        OutputByteMin = module.Byte;
+                //    IsOutputOnList = true;
+                //    break;
+                //case eS7io.AnalogicOutput:
+                //            if (OutputByteMax <= module.Byte)
+                //                OutputByteMax = module.Byte + 4;
+                //            if (module.Byte < OutputByteMin)
+                //                OutputByteMin = module.Byte;   
+                //            IsOutputOnList = true;
+                //    break;
+                //}  
+
+            }
 
             if (!IsInputOnList)
                 InputByteMin = 0;
