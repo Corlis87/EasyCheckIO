@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace TiaFrameworkUI
+namespace EasyCheckIoUI
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

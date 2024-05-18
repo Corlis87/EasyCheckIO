@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._11_Contracts;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -16,7 +16,7 @@ using DocumentFormat.OpenXml.Drawing;
 using System.Runtime.CompilerServices;
 using DocumentFormat.OpenXml.Spreadsheet;
 
-namespace TiaFrameworkCore.ViewModel
+namespace EasyCheckIoCore.ViewModel
 {
     public partial class AllendBradleyViewModel : BaseViewModel
     {

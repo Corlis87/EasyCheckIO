@@ -1,7 +1,7 @@
 using Microsoft.Maui.Controls;
 
 
-namespace TiaFrameworkUI.View;
+namespace EasyCheckIoUI.View;
 
 public partial class uc_InputModule : ContentView
 {

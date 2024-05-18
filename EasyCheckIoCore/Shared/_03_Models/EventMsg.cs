@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCore.Shared._03_DataBlock
+namespace EasyCheckIoCore.Shared._03_DataBlock
 {
     public class EventMsg
     {

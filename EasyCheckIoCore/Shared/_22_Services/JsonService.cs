@@ -3,11 +3,11 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Text;
 using System.Text.Json;
-using TiaFrameworkCore.Shared._03_DataBlock;
-using TiaFrameworkCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Shared._11_Contracts;
 
 
-namespace TiaFrameworkCore.Shared._22_Services
+namespace EasyCheckIoCore.Shared._22_Services
 {
     public class JsonService : IJsonService
     {

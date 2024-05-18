@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Shared._03_DataBlock;
 using ClosedXML.Excel;
-using TiaFrameworkCore.Excel._03_DataBlock;
+using EasyCheckIoCore.Excel._03_DataBlock;
 
-namespace TiaFrameworkCore.Excel._13_Helper
+namespace EasyCheckIoCore.Excel._13_Helper
 {
     public static class ExcelHelper
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Platform;
 
-namespace TiaFrameworkCtrls.Controls
+namespace EasyCheckIoCtrls.Controls
 {    
     // TODO: Include the Orientation property 
     public class LinearGauge : GraphicsView

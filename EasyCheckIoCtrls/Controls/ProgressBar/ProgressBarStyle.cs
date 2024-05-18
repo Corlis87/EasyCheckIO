@@ -1,4 +1,4 @@
-﻿namespace TiaFrameworkCtrls.Controls
+﻿namespace EasyCheckIoCtrls.Controls
 {
 	public enum ProgressBarStyle
     {

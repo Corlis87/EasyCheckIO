@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCtrls.Extensions
+namespace EasyCheckIoCtrls.Extensions
 {
     public static class NumericExtensions
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCore.Shared._80_Util
+namespace EasyCheckIoCore.Shared._80_Util
 {
     public class Conversions
     {

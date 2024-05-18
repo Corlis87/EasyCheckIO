@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.ViewModel;
+using EasyCheckIoCore.ViewModel;
 
-namespace TiaFrameworkCore.Shared._24_Messenger
+namespace EasyCheckIoCore.Shared._24_Messenger
 {
     public class S7TagsMessage : ValueChangedMessage<IEnumerable<t_S7TagViewModel>>
     {

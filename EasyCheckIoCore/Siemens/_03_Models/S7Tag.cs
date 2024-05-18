@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TiaFrameworkCore.Shared._06_Enum;
-using TiaFrameworkCore.Siemens._13_Helper;
+using EasyCheckIoCore.Shared._06_Enum;
+using EasyCheckIoCore.Siemens._13_Helper;
 using static Sharp7.S7Consts;
 
-namespace TiaFrameworkCore.Siemens._03_DataBlock
+namespace EasyCheckIoCore.Siemens._03_DataBlock
 {
     public class S7Tag : S7Address
     {

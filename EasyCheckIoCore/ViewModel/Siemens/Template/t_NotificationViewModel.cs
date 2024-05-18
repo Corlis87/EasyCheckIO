@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._23_Store;
+using EasyCheckIoCore.Shared._23_Store;
 
-namespace TiaFrameworkCore.ViewModel
+namespace EasyCheckIoCore.ViewModel
 {
     public partial class t_NotificationViewModel : ObservableObject
     {

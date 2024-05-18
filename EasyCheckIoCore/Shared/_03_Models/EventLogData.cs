@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCore.Shared._03_Models
+namespace EasyCheckIoCore.Shared._03_Models
 {
     public class EventLogData
 

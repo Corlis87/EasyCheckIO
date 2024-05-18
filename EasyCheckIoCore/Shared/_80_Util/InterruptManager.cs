@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._03_DataBlock;
-using TiaFrameworkCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Shared._11_Contracts;
 
-namespace TiaFrameworkCore.Shared._80_Util
+namespace EasyCheckIoCore.Shared._80_Util
 {
     public class InterruptManager
     {

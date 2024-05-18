@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Animations;
 
-namespace TiaFrameworkCtrls.Controls
+namespace EasyCheckIoCtrls.Controls
 {
 	public class ButtonDrawable : IDrawable
 	{

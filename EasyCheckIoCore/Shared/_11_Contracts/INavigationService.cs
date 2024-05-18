@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Siemens._03_DataBlock;
-using TiaFrameworkCore.ViewModel;
+using EasyCheckIoCore.Siemens._03_DataBlock;
+using EasyCheckIoCore.ViewModel;
 
-namespace TiaFrameworkCore.Shared._11_Contracts
+namespace EasyCheckIoCore.Shared._11_Contracts
 {
     public interface INavigationService
     {

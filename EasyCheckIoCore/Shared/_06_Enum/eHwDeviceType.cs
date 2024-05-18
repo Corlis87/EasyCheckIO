@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCore.Shared._06_Enum
+namespace EasyCheckIoCore.Shared._06_Enum
 {
     public enum eHwDeviceType
     {

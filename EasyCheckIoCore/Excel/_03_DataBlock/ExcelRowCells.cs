@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCore.Excel._03_DataBlock
+namespace EasyCheckIoCore.Excel._03_DataBlock
 {
     public class ExcelRowCells
     {

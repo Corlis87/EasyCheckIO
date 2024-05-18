@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._06_Enum;
-using TiaFrameworkCore.Shared._80_Util;
+using EasyCheckIoCore.Shared._06_Enum;
+using EasyCheckIoCore.Shared._80_Util;
 
-namespace TiaFrameworkCore.Shared._03_DataBlock
+namespace EasyCheckIoCore.Shared._03_DataBlock
 {
     public class OperationResult
     {

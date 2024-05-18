@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace TiaFrameworkUI
+namespace EasyCheckIoUI
 {
     public class Program
     {

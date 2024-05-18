@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="TiaFrameworkUI.View.FormulasView"
+    x:Class="EasyCheckIoUI.View.FormulasView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:ctrl="clr-namespace:TiaFrameworkCtrls.Controls;assembly=TiaFrameworkCtrls"
+    xmlns:ctrl="clr-namespace:EasyCheckIoCtrls.Controls;assembly=EasyCheckIoCtrls"
     xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
     xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
     Title="Formulas">

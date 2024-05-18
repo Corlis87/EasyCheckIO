@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text.Json;
-using TiaFrameworkCore.Shared._03_DataBlock;
-using TiaFrameworkCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Shared._11_Contracts;
 
-namespace TiaFrameworkCore.Shared._11_Contracts
+namespace EasyCheckIoCore.Shared._11_Contracts
 {
     public interface IJsonService
     {

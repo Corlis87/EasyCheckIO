@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCore.Program.Events
+namespace EasyCheckIoCore.Program.Events
 {
     public class ValueEventArgs<T>
          : EventArgs

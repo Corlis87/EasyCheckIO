@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._06_Enum;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.Siemens._03_DataBlock;
+using EasyCheckIoCore.Shared._06_Enum;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.Siemens._03_DataBlock;
 
-namespace TiaFrameworkCore.ViewModel
+namespace EasyCheckIoCore.ViewModel
 {
     public partial class t_PartialModuleViewModel:BaseViewModel
     {

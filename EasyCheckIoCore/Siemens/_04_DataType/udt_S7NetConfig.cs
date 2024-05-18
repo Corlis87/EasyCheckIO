@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Siemens._03_DataBlock;
+using EasyCheckIoCore.Siemens._03_DataBlock;
 
-namespace TiaFrameworkCore.Siemens._04_DataType
+namespace EasyCheckIoCore.Siemens._04_DataType
 {
     public struct udt_S7NetConfig
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TiaFrameworkCore
+namespace EasyCheckIoCore
 {
     // All the code in this file is only included on Tizen.
     public class PlatformClass1

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="TiaFrameworkUI.View.SiemensSearchView"
+    x:Class="EasyCheckIoUI.View.SiemensSearchView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:TiaFrameworkUI.View"
+    xmlns:local="clr-namespace:EasyCheckIoUI.View"
     xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
     xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
-    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+    xmlns:rs="clr-namespace:EasyCheckIoUI.Resources"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    xmlns:vm="clr-namespace:EasyCheckIoCore.ViewModel;assembly=EasyCheckIoCore"
     x:Name="this"
     Title="Searching">
     <ContentPage.Resources>

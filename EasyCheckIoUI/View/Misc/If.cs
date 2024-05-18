@@ -1,5 +1,5 @@
 ﻿
-namespace TiaFrameworkUI.View
+namespace EasyCheckIoUI.View
 {
     public class If : ContentView
     {

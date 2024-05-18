@@ -1,7 +1,7 @@
-﻿using TiaFrameworkUI.View;
-using TiaFrameworkUI.View.Form;
+﻿using EasyCheckIoUI.View;
+using EasyCheckIoUI.View.Form;
 
-namespace TiaFrameworkUI
+namespace EasyCheckIoUI
 {
     public partial class AppShell : Shell
     {

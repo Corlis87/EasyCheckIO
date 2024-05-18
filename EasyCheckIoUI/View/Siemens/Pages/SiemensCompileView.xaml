@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="TiaFrameworkUI.View.SiemensCompileView"
+    x:Class="EasyCheckIoUI.View.SiemensCompileView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:db="clr-namespace:TiaFrameworkCore.Shared._03_DataBlock;assembly=TiaFrameworkCore"
-    xmlns:local="clr-namespace:TiaFrameworkUI.View"
-    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
-    xmlns:templates="clr-namespace:TiaFrameworkUI.Templates"
-    xmlns:view="clr-namespace:TiaFrameworkUI.View"
-    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    xmlns:db="clr-namespace:EasyCheckIoCore.Shared._03_DataBlock;assembly=EasyCheckIoCore"
+    xmlns:local="clr-namespace:EasyCheckIoUI.View"
+    xmlns:rs="clr-namespace:EasyCheckIoUI.Resources"
+    xmlns:templates="clr-namespace:EasyCheckIoUI.Templates"
+    xmlns:view="clr-namespace:EasyCheckIoUI.View"
+    xmlns:vm="clr-namespace:EasyCheckIoCore.ViewModel;assembly=EasyCheckIoCore"
     x:DataType="vm:SiemensCompileViewModel">
     <Shell.TitleView>
         <Grid ColumnDefinitions="auto,*">

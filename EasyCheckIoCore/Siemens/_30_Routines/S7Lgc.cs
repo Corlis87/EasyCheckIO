@@ -7,16 +7,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Program.Events;
-using TiaFrameworkCore.Shared._03_DataBlock;
-using TiaFrameworkCore.Shared._06_Enum;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.Shared._22_Services;
-using TiaFrameworkCore.Siemens._03_DataBlock;
-using TiaFrameworkCore.Siemens._13_Helper;
-using TiaFrameworkCore.ViewModel;
+using EasyCheckIoCore.Program.Events;
+using EasyCheckIoCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Shared._06_Enum;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._22_Services;
+using EasyCheckIoCore.Siemens._03_DataBlock;
+using EasyCheckIoCore.Siemens._13_Helper;
+using EasyCheckIoCore.ViewModel;
 
-namespace TiaFrameworkCore.Siemens._30_Lgc
+namespace EasyCheckIoCore.Siemens._30_Lgc
 {
     public class S7Lgc : IS7Lgc
     {

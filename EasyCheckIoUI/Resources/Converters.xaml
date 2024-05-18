@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary
-    x:Class="TiaFrameworkUI.Resources.Converters"
+    x:Class="EasyCheckIoUI.Resources.Converters"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:cv="clr-namespace:TiaFrameworkUI.Converters"
-    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources">
+    xmlns:cv="clr-namespace:EasyCheckIoUI.Converters"
+    xmlns:rs="clr-namespace:EasyCheckIoUI.Resources">
 
     <cv:TextGraphToItemsourceValueConverter x:Key="TextGraphToItemsourceValueConverter" />
     <cv:TextGraphValueConverter x:Key="TextGraphValueConverter" />

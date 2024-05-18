@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._06_Enum;
-using TiaFrameworkCore.Siemens._03_DataBlock;
+using EasyCheckIoCore.Shared._06_Enum;
+using EasyCheckIoCore.Siemens._03_DataBlock;
 
-namespace TiaFrameworkCore.Excel._15_Extensions
+namespace EasyCheckIoCore.Excel._15_Extensions
 {
     public static class ExcelValueExtensions
     {

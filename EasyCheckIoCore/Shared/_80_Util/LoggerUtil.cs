@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._06_Enum;
+using EasyCheckIoCore.Shared._06_Enum;
 
-namespace TiaFrameworkCore.Shared._80_Util
+namespace EasyCheckIoCore.Shared._80_Util
 {
     public static class LoggerUtil
     {

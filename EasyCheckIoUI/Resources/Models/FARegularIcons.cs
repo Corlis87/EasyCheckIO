@@ -1,4 +1,4 @@
-﻿namespace TiaFrameworkUI.Resources
+﻿namespace EasyCheckIoUI.Resources
 {
 
     public static class FARegularIcons

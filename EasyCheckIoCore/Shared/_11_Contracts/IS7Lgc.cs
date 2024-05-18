@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Program.Events;
-using TiaFrameworkCore.Shared._03_DataBlock;
-using TiaFrameworkCore.Siemens._03_DataBlock;
+using EasyCheckIoCore.Program.Events;
+using EasyCheckIoCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Siemens._03_DataBlock;
 
-namespace TiaFrameworkCore.Shared._11_Contracts
+namespace EasyCheckIoCore.Shared._11_Contracts
 {
     public interface IS7Lgc
     {

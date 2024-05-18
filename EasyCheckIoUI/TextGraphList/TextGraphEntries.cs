@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkUI.TextGraphList
+namespace EasyCheckIoUI.TextGraphList
 {
     public class TextGraphEntries
     {

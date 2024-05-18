@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCtrls.Util
+namespace EasyCheckIoCtrls.Util
 {
     public partial class ColorResource : ResourceDictionary
     {

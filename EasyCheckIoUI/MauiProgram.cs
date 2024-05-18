@@ -9,19 +9,19 @@ using Microsoft.Maui.Platform;
 using Mopups.Hosting;
 using Serilog;
 using Serilog.Core;
-using TiaFrameworkCore.Excel._30_Lgc;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.Shared._22_Services;
-using TiaFrameworkCore.Shared._23_Store;
-using TiaFrameworkCore.Siemens._30_Lgc;
-using TiaFrameworkCore.ViewModel;
-using TiaFrameworkUI.Services;
-using TiaFrameworkUI.TextGraphList;
-using TiaFrameworkUI.View;
-using TiaFrameworkUI.View.Form;
+using EasyCheckIoCore.Excel._30_Lgc;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._22_Services;
+using EasyCheckIoCore.Shared._23_Store;
+using EasyCheckIoCore.Siemens._30_Lgc;
+using EasyCheckIoCore.ViewModel;
+using EasyCheckIoUI.Services;
+using EasyCheckIoUI.TextGraphList;
+using EasyCheckIoUI.View;
+using EasyCheckIoUI.View.Form;
 using UraniumUI;
 
-namespace TiaFrameworkUI
+namespace EasyCheckIoUI
 {
     public static class MauiProgram
     {
