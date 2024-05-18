@@ -89,8 +89,8 @@
     <PackageReference Include="UraniumUI.Material" Version="2.8.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TiaFrameworkCore\TiaFrameworkCore.csproj" />
-    <ProjectReference Include="..\TiaFrameWorkCtrls\TiaFrameworkCtrls.csproj" />
+    <ProjectReference Include="..\EasyCheckIoCore\EasyCheckIoCore.csproj" />
+    <ProjectReference Include="..\EasyCheckIoCtrls\EasyCheckIoCtrls.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="View\ExcelView.xaml.cs">

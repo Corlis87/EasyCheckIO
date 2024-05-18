@@ -13,7 +13,7 @@
                 Margin="0,15,0,0"
                 ColumnDefinitions="auto"
                 HorizontalOptions="Center"
-                RowDefinitions="auto,auto,auto">
+                RowDefinitions="auto,auto">
                 <HorizontalStackLayout>
                     <Entry
                         FontSize="Large"
@@ -66,10 +66,7 @@
                         Text="{Binding Result, StringFormat='{}{0:F2}'}"
                         VerticalOptions="Center" />
                 </HorizontalStackLayout>
-                <VerticalStackLayout Grid.Row="2" Margin="0,15,0,0">
-                    <Label FontSize="Micro" Text="FORMULA FOR CALCULATION OF PROPORTIONS" />
-                    <Label HorizontalTextAlignment="Center" Text="A : B = C : D" />
-                </VerticalStackLayout>
+               
             </Grid>
         </Grid>
     </Grid>
