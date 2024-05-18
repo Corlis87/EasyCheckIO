@@ -108,7 +108,7 @@
                     Command="{Binding CalculateCommand}"
                     StyleClass="FilledButton"
                     Text="Calculate" />
-                <Grid ColumnDefinitions="250,*" RowDefinitions="auto,auto,auto,auto">
+                <Grid ColumnDefinitions="250,*" RowDefinitions="auto,auto,auto,auto,auto">
                     <Grid.Resources>
                         <Style TargetType="Label">
                             <Setter Property="Margin" Value="5,2" />
@@ -117,21 +117,21 @@
                     </Grid.Resources>
                     <Label Text="30.12 | Maximum Speed: " />
                     <Label Grid.Column="1" Text="{Binding MaximumSpeed}" />
-                    <Label Grid.Row="1" Grid.Column="1" Text="30.25 | Maximum Start Current: " />
-                    <Label Grid.Column="1" Text="{Binding MaximumStartCurrent}" />
-                    <Label Grid.Row="1" Text="30.27 | Maximum Current: " />
-                    <Label
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        Text="{Binding MaximumCurrent}" />
-                    <Label Grid.Row="2" Text="46.01 | Speed Scaling:" />
+                    <Label Grid.Row="1"  Text="30.25 | Maximum Start Current: " />
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding MaximumStartCurrent}" />
+                    <Label Grid.Row="2" Text="30.27 | Maximum Current: " />
                     <Label
                         Grid.Row="2"
                         Grid.Column="1"
-                        Text="{Binding MaximumSpeed}" />
-                    <Label Grid.Row="3" Text="Max Speed [GearRatio]" />
+                        Text="{Binding MaximumCurrent}" />
+                    <Label Grid.Row="3" Text="46.01 | Speed Scaling:" />
                     <Label
                         Grid.Row="3"
+                        Grid.Column="1"
+                        Text="{Binding MaximumSpeed}" />
+                    <Label Grid.Row="4" Text="Max Speed [GearRatio]" />
+                    <Label
+                        Grid.Row="4"
                         Grid.Column="1"
                         Text="{Binding MaximumSpeedGearRatio}" />
                 </Grid>
