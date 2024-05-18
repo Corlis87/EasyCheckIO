@@ -9,14 +9,18 @@ namespace TiaFrameworkUI
         {
             InitializeComponent();
 
-            Routing.RegisterRoute(nameof(Siemens_m100_ConfigView), typeof(Siemens_m100_ConfigView));
-            Routing.RegisterRoute(nameof(Siemens_m200_EditorView), typeof(Siemens_m200_EditorView));
-            Routing.RegisterRoute(nameof(Siemens_p300_NetConfigView), typeof(Siemens_p300_NetConfigView));         
-            Routing.RegisterRoute(nameof(Formulas_p200_InverterView), typeof(Formulas_p200_InverterView));
-            Routing.RegisterRoute(nameof(Siemens_p400_CompileView), typeof(Siemens_p400_CompileView));
-            Routing.RegisterRoute(nameof(Formulas_p100_ProportionView), typeof(Formulas_p100_ProportionView));
-            Routing.RegisterRoute(nameof(Siemens_p410_SearchView), typeof(Siemens_p410_SearchView));
-            Routing.RegisterRoute(nameof(Siemens_p420_LoadTagsView), typeof(Siemens_p420_LoadTagsView));
+            Routing.RegisterRoute(nameof(SiemensConfigView), typeof(SiemensConfigView));
+            Routing.RegisterRoute(nameof(SiemensEditorView), typeof(SiemensEditorView));
+            Routing.RegisterRoute(nameof(SiemensNetConfigView), typeof(SiemensNetConfigView));         
+            Routing.RegisterRoute(nameof(FormulasInverterView), typeof(FormulasInverterView));
+            Routing.RegisterRoute(nameof(SiemensCompileView), typeof(SiemensCompileView));
+            Routing.RegisterRoute(nameof(FormulasProportionView), typeof(FormulasProportionView));
+            Routing.RegisterRoute(nameof(SiemensSearchView), typeof(SiemensSearchView));
+            Routing.RegisterRoute(nameof(SiemensLoadTagsView), typeof(SiemensLoadTagsView));
+        }
+        private void ThemeToggled(object sender, ToggledEventArgs e)
+        {
+            App.Current.UserAppTheme = e.Value ? AppTheme.Dark : AppTheme.Light;
         }
     }
 }

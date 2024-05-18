@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TiaFrameworkUI.View.t_PartialModuleView"
-             xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
-             xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
-               x:DataType="vm:t_PartialModuleViewModel" 
-             BackgroundColor="{StaticResource PageBackgroundColor}"
-             
-             >
+<ContentView
+    x:Class="TiaFrameworkUI.View.t_PartialModuleView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    x:DataType="vm:t_PartialModuleViewModel">
     <Frame Padding="10">
-        <Grid  ColumnDefinitions="*,auto" ColumnSpacing="15" RowDefinitions="*" >
+        <Grid
+            ColumnDefinitions="*,auto"
+            ColumnSpacing="15"
+            RowDefinitions="*">
 
-            <Grid Grid.Column="0" >
+            <Grid Grid.Column="0">
                 <VerticalStackLayout Spacing="5">
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Text="Name: " TextColor="DodgerBlue" />
-                                    <Span Text="{Binding Tag.Name}"  />
+                                    <Span Text="{Binding Tag.Name}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <HorizontalStackLayout Spacing="10"  >
+                    <HorizontalStackLayout Spacing="10">
                         <Label>
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
-                                        <Span Text="Byte: "  TextColor="DodgerBlue"/>
-                                        <Span Text="{Binding Tag.Byte}"  />
+                                        <Span Text="Byte: " TextColor="DodgerBlue" />
+                                        <Span Text="{Binding Tag.Byte}" />
                                     </FormattedString.Spans>
                                 </FormattedString>
                             </Label.FormattedText>
@@ -38,19 +39,19 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
-                                        <Span Text="Bit: " TextColor="DodgerBlue"/>
-                                        <Span Text="{Binding Tag.Bit}"  />
+                                        <Span Text="Bit: " TextColor="DodgerBlue" />
+                                        <Span Text="{Binding Tag.Bit}" />
                                     </FormattedString.Spans>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                    </HorizontalStackLayout >
+                    </HorizontalStackLayout>
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Text="Type: " TextColor="DodgerBlue" />
-                                    <Span Text="{Binding Tag.DataType,Converter={StaticResource TextGraphValueConverter}, ConverterParameter=S7DataType,Mode=OneWay}"   />
+                                    <Span Text="{Binding Tag.DataType, Converter={StaticResource TextGraphValueConverter}, ConverterParameter=S7DataType, Mode=OneWay}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -59,8 +60,8 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span Text="Module: " TextColor="DodgerBlue"/>
-                                    <Span Text="{Binding Tag.IO,Converter={StaticResource TextGraphValueConverter}, ConverterParameter=S7Io,Mode=OneWay}"   />
+                                    <Span Text="Module: " TextColor="DodgerBlue" />
+                                    <Span Text="{Binding Tag.IO, Converter={StaticResource TextGraphValueConverter}, ConverterParameter=S7Io, Mode=OneWay}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -69,8 +70,8 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span Text="Comment: " TextColor="DodgerBlue"/>
-                                    <Span Text="{Binding Tag.Comment}"  />
+                                    <Span Text="Comment: " TextColor="DodgerBlue" />
+                                    <Span Text="{Binding Tag.Comment}" />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>
@@ -79,10 +80,27 @@
             </Grid>
             <Grid Grid.Column="1">
                 <VerticalStackLayout>
-                    <Button Text="{x:Static rs:FASolidIcons.PenToSquare}"  FontFamily="FASolid" FontSize="25"  TextColor="Black" BackgroundColor="Transparent"  Command="{Binding EditCommand}" VerticalOptions="Start" HorizontalOptions="End" />
-                    <Button Text="{x:Static rs:FASolidIcons.Trash}" FontFamily="FASolid" FontSize="25"  TextColor="Black" BackgroundColor="Transparent"   Command="{Binding Source={RelativeSource AncestorType={x:Type vm:t_PartialModulesCollectionViewModel}},Path=RemoveCommand}" CommandParameter="{Binding .}"  VerticalOptions="Start" HorizontalOptions="End" />
+                    <Button
+                        BackgroundColor="Transparent"
+                        Command="{Binding EditCommand}"
+                        FontFamily="FASolid"
+                        FontSize="25"
+                        HorizontalOptions="End"
+                        Text="{x:Static rs:FASolidIcons.PenToSquare}"
+                        TextColor="Black"
+                        VerticalOptions="Start" />
+                    <Button
+                        BackgroundColor="Transparent"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:t_PartialModulesCollectionViewModel}}, Path=RemoveCommand}"
+                        CommandParameter="{Binding .}"
+                        FontFamily="FASolid"
+                        FontSize="25"
+                        HorizontalOptions="End"
+                        Text="{x:Static rs:FASolidIcons.Trash}"
+                        TextColor="Black"
+                        VerticalOptions="Start" />
                 </VerticalStackLayout>
-            
+
             </Grid>
         </Grid>
     </Frame>

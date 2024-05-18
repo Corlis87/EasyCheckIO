@@ -19,52 +19,52 @@ namespace TiaFrameworkUI.Services
     {
         public async Task NavigateToHwDevicesView()
         {
-            await Shell.Current.GoToAsync(nameof(_10_SiemensView));
+            await Shell.Current.GoToAsync(nameof(SiemensView));
         }
 
         public async Task NavigateToMainView()
         {
-            await Shell.Current.GoToAsync(nameof(_00_MainView));
+            await Shell.Current.GoToAsync(nameof(MainView));
         }
 
         public async Task NavigateToHwDeviceConfigView()
         {
-            await Shell.Current.Navigation.PushModalAsync(Shell.Current.Handler.MauiContext.Services.GetService<Siemens_m100_ConfigView>());
+            await Shell.Current.Navigation.PushModalAsync(Shell.Current.Handler.MauiContext.Services.GetService<SiemensConfigView>());
             //  await Shell.Current.GoToAsync("//" + nameof(HwDeviceConfigView));
         }
 
         public async Task NavigateToHwDeviceEditView(S7Tag tag)
         {
-            await Shell.Current.Navigation.PushModalAsync(new Siemens_m200_EditorView(new Siemens_m200_EditorViewModel(Shell.Current.Handler.MauiContext.Services.GetService<ICoreServices>(),tag, Shell.Current.Handler.MauiContext.Services.GetService<IS7Lgc>())));
+            await Shell.Current.Navigation.PushModalAsync(new SiemensEditorView(new SiemensEditorViewModel(Shell.Current.Handler.MauiContext.Services.GetService<ICoreServices>(),tag, Shell.Current.Handler.MauiContext.Services.GetService<IS7Lgc>())));
             //  await Shell.Current.GoToAsync("//" + nameof(HwDeviceConfigView));
         }
 
         public async Task NavigateToHwDeviceTagsView()
         {
             //  await Shell.Current.Navigation.PushModalAsync(Shell.Current.Handler.MauiContext.Services.GetService<HwDeviceModulesView>());
-            await Shell.Current.GoToAsync(nameof(Siemens_p400_CompileView));
+            await Shell.Current.GoToAsync(nameof(SiemensCompileView));
         }
 
         public async Task NavigateToModuleSearchTagView()
         {
             //  await Shell.Current.Navigation.PushModalAsync(Shell.Current.Handler.MauiContext.Services.GetService<HwDeviceModulesView>());
-            await Shell.Current.GoToAsync(nameof(Siemens_p410_SearchView));
+            await Shell.Current.GoToAsync(nameof(SiemensSearchView));
         }
 
         public async Task NavigateToLoadFileView()
         {
             //  await Shell.Current.Navigation.PushModalAsync(Shell.Current.Handler.MauiContext.Services.GetService<HwDeviceModulesView>());
-            await Shell.Current.GoToAsync(nameof(Siemens_p420_LoadTagsView));
+            await Shell.Current.GoToAsync(nameof(SiemensLoadTagsView));
         }
 
         public async Task NavigateToCompilePageView()
         {
-            await Shell.Current.GoToAsync(nameof(Siemens_p400_CompileView));
+            await Shell.Current.GoToAsync(nameof(SiemensCompileView));
         }
         public async Task NavigateToHwDeviceEditPlcProfileView()
         {
             //  await Shell.Current.Navigation.PushModalAsync(Shell.Current.Handler.MauiContext.Services.GetService<HwDeviceModulesView>());
-            await Shell.Current.GoToAsync(nameof(Siemens_p300_NetConfigView));
+            await Shell.Current.GoToAsync(nameof(SiemensNetConfigView));
         }
 
         public async Task NavigateToScaling(t_S7TagViewModel s7TagView)
@@ -93,12 +93,12 @@ namespace TiaFrameworkUI.Services
 
         public async Task NavigateToProportion()
         {
-            await Shell.Current.GoToAsync(nameof(Formulas_p100_ProportionView));
+            await Shell.Current.GoToAsync(nameof(FormulasProportionView));
         }
 
         public async Task NavigateToAbb()
         {
-            await Shell.Current.GoToAsync(nameof(Formulas_p200_InverterView));
+            await Shell.Current.GoToAsync(nameof(FormulasInverterView));
         }
 
         public async Task NavigateToPreviewPushModalAsync()

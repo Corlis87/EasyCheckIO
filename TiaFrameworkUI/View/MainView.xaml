@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiaFrameworkUI.View.MainView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+    xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    Title="Home"
+    x:DataType="vm:MainViewModel">
+    <ContentPage.Resources>
+        <x:String x:Key="DocLink">https://corlis87.github.io/ZcheckIO/</x:String>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <VerticalStackLayout HorizontalOptions="Center">
+            <Image
+                Margin="20"
+                HeightRequest="120"
+                Source="../Images/easycheck.svg" />
+        </VerticalStackLayout>
+        <Grid Grid.Row="1">
+            <VerticalStackLayout Margin="10,0" Spacing="2">
+                <Label FontAttributes="Bold" Text="About The Project" />
+                <BoxView StyleClass="Divider" />
+                <Label Margin="0,0,15,0" Text="EasyCheckIO is an app for testing PLC inputs and outputs for Siemens S7-1200/1500 series." />
+                <Label FontAttributes="Bold" Text="Documentation" />
+                <BoxView StyleClass="Divider" />
+                <Label Text="Only Italian documentation is now available." />
+                <Label Margin="0,0,15,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span
+                                Text="Italian wiki here"
+                                TextColor="{AppThemeBinding {StaticResource OnBackground},
+                                                            Dark={StaticResource OnBackgroundDark}}"
+                                TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{x:Static uranium:Commands.OpenLinkCommand}" CommandParameter="{StaticResource DocLink}" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Label
+                Margin="0,5"
+                HorizontalOptions="End"
+                Text="Corlis | Ver1.0" />
+        </Grid>
+    </Grid>
+</ContentPage>

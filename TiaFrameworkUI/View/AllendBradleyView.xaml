@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiaFrameworkUI.View.AllendBradleyView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ctrl="clr-namespace:TiaFrameworkCtrls.Controls;assembly=TiaFrameworkCtrls"
+    Title="AllendBradley">
+    <Grid>
+        <Grid RowDefinitions="auto,auto,auto">
+            <Grid Grid.Row="0" RowDefinitions="auto,auto">
+                <Grid Grid.Row="0">
+                    <Grid Margin="5,5,0,5" ColumnDefinitions="auto,*,auto,auto">
+                        <Label Text="Ip Address:" VerticalOptions="Center" />
+                        <Entry
+                            Grid.Column="1"
+                            Placeholder="192.168.0.1"
+                            Text="{Binding Address}" />
+
+                        <Label
+                            Grid.Column="2"
+                            Text="Port:"
+                            VerticalOptions="Center" />
+                        <Entry
+                            Grid.Column="3"
+                            Placeholder="502"
+                            Text="{Binding Port}" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid Margin="5,5,0,5" ColumnDefinitions="auto,35,auto,35,*,*">
+                        <Label
+                            Grid.Column="0"
+                            Text="Rack:"
+                            VerticalOptions="Center" />
+                        <Entry Grid.Column="1" Text="{Binding Rack}" />
+                        <Label
+                            Grid.Column="2"
+                            Text="Slot:"
+                            VerticalOptions="Center" />
+                        <Entry Grid.Column="3" Text="{Binding Slot}" />
+                        <Button
+                            Grid.Column="4"
+                            Margin="5,0,5,0"
+                            Command="{Binding ConnectCommand}"
+                            HorizontalOptions="Fill"
+                            StyleClass="FilledButton"
+                            Text="Connect" />
+                        <Button
+                            Grid.Column="5"
+                            Margin="5,0,5,0"
+                            Command="{Binding DisconnectCommand}"
+                            HorizontalOptions="Fill"
+                            StyleClass="FilledButton"
+                            Text="Disconnect" />
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid RowDefinitions="auto,auto">
+                    <Grid x:Name="HEADER_READ">
+                        <Rectangle />
+                        <Label HorizontalTextAlignment="Center" Text="Read" />
+                    </Grid>
+                    <Grid Grid.Row="1" ColumnDefinitions="*,auto">
+                        <Grid Grid.Column="0" RowDefinitions="auto,*">
+                            <Grid x:Name="TAG" ColumnDefinitions="auto,*">
+                                <Label Text="Tag:" VerticalTextAlignment="Center" />
+                                <Entry Grid.Column="1" Text="{Binding ReadTag}" />
+                            </Grid>
+                            <Editor
+                                Grid.Row="1"
+                                IsReadOnly="True"
+                                Text="{Binding ReadResult}"
+                                VerticalOptions="Fill" />
+                        </Grid>
+                        <Grid Grid.Column="1" ColumnDefinitions="auto,auto">
+                            <VerticalStackLayout Margin="5,5,0,0" Spacing="3">
+                                <Button
+                                    Command="{Binding ReadBoolCommand}"
+                                    StyleClass="FilledButton"
+                                    Text="Bit" />
+                                <Button
+                                    Command="{Binding ReadIntCommand}"
+                                    StyleClass="FilledButton"
+                                    Text="Int" />
+                                <Button
+                                    Command="{Binding ReadFloatCommand}"
+                                    StyleClass="FilledButton"
+                                    Text="Float" />
+                            </VerticalStackLayout>
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                Margin="5,5,0,0"
+                                Spacing="3">
+                                <Button
+                                    Command="{Binding ReadByteCommand}"
+                                    StyleClass="FilledButton"
+                                    Text="Byte" />
+                                <Button
+                                    Command="{Binding ReadDintCommand}"
+                                    StyleClass="FilledButton"
+                                    Text="DInt" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid RowDefinitions="auto,auto">
+                    <Grid x:Name="HEADER_WRITE">
+                        <Rectangle />
+                        <Label HorizontalTextAlignment="Center" Text="Write" />
+                    </Grid>
+                    <Grid Grid.Row="1" ColumnDefinitions="*,auto">
+                        <Grid Grid.Column="0" RowDefinitions="auto,auto,*">
+                            <Grid ColumnDefinitions="auto,*">
+                                <Label Text="Tag:" VerticalTextAlignment="Center" />
+                                <Entry Grid.Column="1" Text="{Binding WriteTag}" />
+                            </Grid>
+                            <Grid Grid.Row="1" ColumnDefinitions="auto,*">
+                                <Label Text="Value:" VerticalTextAlignment="Center" />
+                                <Entry Grid.Column="1" Text="{Binding WriteValue}" />
+                            </Grid>
+                            <Editor
+                                Grid.Row="2"
+                                IsReadOnly="True"
+                                Text="{Binding WriteResult}"
+                                VerticalOptions="Fill" />
+                        </Grid>
+                        <Grid Grid.Column="1" ColumnDefinitions="auto,auto">
+                            <VerticalStackLayout Margin="5,5,0,0" Spacing="3">
+                                <Button
+                                    Command="{Binding WriteBoolCommand}"
+                                    StyleClass="FilledButton"
+                                    Text="Bit" />
+                                <Button
+                                    Command="{Binding WriteIntCommand}"
+                                    StyleClass="FilledButton"
+                                    Text="Int" />
+                                <Button
+                                    Command="{Binding WriteFloatCommand}"
+                                    StyleClass="FilledButton"
+                                    Text="Float" />
+                            </VerticalStackLayout>
+                            <VerticalStackLayout
+                                Grid.Column="1"
+                                Margin="5,5,0,0"
+                                Spacing="3">
+                                <Button
+                                    Command="{Binding WriteByteCommand}"
+                                    StyleClass="FilledButton"
+                                    Text="Byte" />
+                                <Button
+                                    Command="{Binding WriteDintCommand}"
+                                    StyleClass="FilledButton"
+                                    Text="DInt" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,11 +1,14 @@
 ﻿using AppoMobi.Maui.Gestures;
 using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Storage;
+using DocumentFormat.OpenXml.Bibliography;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls.Handlers.Items;
 using Microsoft.Maui.Handlers;
 using Microsoft.Maui.Platform;
 using Mopups.Hosting;
+using Serilog;
+using Serilog.Core;
 using TiaFrameworkCore.Excel._30_Lgc;
 using TiaFrameworkCore.Shared._11_Contracts;
 using TiaFrameworkCore.Shared._22_Services;
@@ -16,6 +19,7 @@ using TiaFrameworkUI.Services;
 using TiaFrameworkUI.TextGraphList;
 using TiaFrameworkUI.View;
 using TiaFrameworkUI.View.Form;
+using UraniumUI;
 
 namespace TiaFrameworkUI
 {
@@ -26,7 +30,8 @@ namespace TiaFrameworkUI
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                
+                .UseUraniumUI()
+                .UseUraniumUIMaterial()
                 .UseMauiCommunityToolkit()
                 .ConfigureMopups()
                 .UseGestures()
@@ -41,89 +46,90 @@ namespace TiaFrameworkUI
                     fonts.AddFont("fa-brands-400.ttf", "FABrands");
                     fonts.AddFont("fa-solid-900.ttf", "FASolid");
                 });
-
             TextGraph.Initialize();
             TextColor.Initialize();
+
+            builder.Services.AddMopupsDialogs();
             builder.Services.AddSingleton<IFileSaver>(FileSaver.Default);
-            builder.Services.AddSingleton<IS7Com, S7Com>();
-            builder.Services.AddSingleton<IS7Lgc,S7Lgc>();
-            builder.Services.AddSingleton<INavigationService, NavigationService>();
+
             builder.Services.AddSingleton<IMessageService, MessageService>();
-            builder.Services.AddSingleton<ICoreServices,CoreServices>();
-            builder.Services.AddSingleton<IExcelLgc,ExcelLgc>();
+            builder.Services.AddSingleton<ICoreServices, CoreServices>();
             builder.Services.AddSingleton<IDirectoryService, DirectoryService>();
-            builder.Services.AddSingleton<IJsonService,JsonService>();
+            builder.Services.AddSingleton<IJsonService, JsonService>();
+            builder.Services.AddSingleton<IEventLogsService, EventLogsService>();
+            builder.Services.AddSingleton<INavigationService, NavigationService>();
             builder.Services.AddSingleton<NotificationStore>(new NotificationStore());
             builder.Services.AddSingleton<INotificationService, NotificationService>();
 
-            builder.Services.AddSingleton<_00_MainViewModel>();
-            builder.Services.AddSingleton<_00_MainView>(
-             s => new _00_MainView(s.GetRequiredService<_00_MainViewModel>()));
+            builder.Services.AddSingleton<IS7Com, S7Com>();
+            builder.Services.AddSingleton<IS7Lgc, S7Lgc>();
+            builder.Services.AddSingleton<IExcelLgc, ExcelLgc>();
 
-          
+            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<MainView>(
+             s => new MainView(s.GetRequiredService<MainViewModel>()));
 
-            builder.Services.AddSingleton<_10_SiemensViewModel>();
-            builder.Services.AddSingleton<_10_SiemensView>(
-             s => new _10_SiemensView(s.GetRequiredService<_10_SiemensViewModel>()));
+            builder.Services.AddSingleton<EventLogViewModel>();
+            builder.Services.AddSingleton<EventLogView>(
+             s => new EventLogView(s.GetRequiredService<EventLogViewModel>()));
 
-            builder.Services.AddTransient<Siemens_m100_ConfigViewModel>();
-            builder.Services.AddTransient<Siemens_m100_ConfigView>(
-             s => new Siemens_m100_ConfigView(s.GetRequiredService<Siemens_m100_ConfigViewModel>()));
+            builder.Services.AddSingleton<SiemensViewModel>();
+            builder.Services.AddSingleton<SiemensView>(
+             s => new SiemensView(s.GetRequiredService<SiemensViewModel>()));
 
-            builder.Services.AddTransient<Siemens_p300_NetConfigViewModel>();
-            builder.Services.AddTransient<Siemens_p300_NetConfigView>(
-             s => new Siemens_p300_NetConfigView(s.GetRequiredService<Siemens_p300_NetConfigViewModel>()));
+            builder.Services.AddTransient<SiemensConfigViewModel>();
+            builder.Services.AddTransient<SiemensConfigView>(
+             s => new SiemensConfigView(s.GetRequiredService<SiemensConfigViewModel>()));
 
-            builder.Services.AddSingleton<Siemens_p400_CompileViewModel>();
-            builder.Services.AddSingleton<Siemens_p400_CompileView>(
-             s => new Siemens_p400_CompileView(s.GetRequiredService<Siemens_p400_CompileViewModel>()));
+            builder.Services.AddTransient<SiemensNetConfigViewModel>();
+            builder.Services.AddTransient<SiemensNetConfigView>(
+             s => new SiemensNetConfigView(s.GetRequiredService<SiemensNetConfigViewModel>()));
 
-            builder.Services.AddTransient<Siemens_p410_SearchViewModel>();
-            builder.Services.AddTransient<Siemens_p410_SearchView>(
-             s => new Siemens_p410_SearchView(s.GetRequiredService<Siemens_p410_SearchViewModel>()));
+            builder.Services.AddSingleton<SiemensCompileViewModel>();
+            builder.Services.AddSingleton<SiemensCompileView>(
+             s => new SiemensCompileView(s.GetRequiredService<SiemensCompileViewModel>()));
 
-            builder.Services.AddTransient<Siemens_p420_LoadTagsViewModel>();
-            builder.Services.AddTransient<Siemens_p420_LoadTagsView>(
-             s => new Siemens_p420_LoadTagsView(s.GetRequiredService<Siemens_p420_LoadTagsViewModel>()));
+            builder.Services.AddTransient<SiemensSearchViewModel>();
+            builder.Services.AddTransient<SiemensSearchView>(
+             s => new SiemensSearchView(s.GetRequiredService<SiemensSearchViewModel>()));
 
+            builder.Services.AddTransient<SiemensLoadTagsViewModel>();
+            builder.Services.AddTransient<SiemensLoadTagsView>(
+             s => new SiemensLoadTagsView(s.GetRequiredService<SiemensLoadTagsViewModel>()));
 
-            builder.Services.AddSingleton<_30_FormViewModel>();
-            builder.Services.AddSingleton<_30_FormulasView>(
-             s => new _30_FormulasView(s.GetRequiredService<_30_FormViewModel>()));
+            builder.Services.AddSingleton<FormViewModel>();
+            builder.Services.AddSingleton<FormulasView>(
+             s => new FormulasView(s.GetRequiredService<FormViewModel>()));
 
             builder.Services.AddSingleton<Formulas_p100_ProportionViewModel>();
-            builder.Services.AddSingleton<Formulas_p100_ProportionView>(
-             s => new Formulas_p100_ProportionView(s.GetRequiredService<Formulas_p100_ProportionViewModel>()));
+            builder.Services.AddSingleton<FormulasProportionView>(
+             s => new FormulasProportionView(s.GetRequiredService<Formulas_p100_ProportionViewModel>()));
 
             builder.Services.AddTransient<Formulas_p200_InverterViewModel>();
-            builder.Services.AddTransient<Formulas_p200_InverterView>(
-             s => new Formulas_p200_InverterView(s.GetRequiredService<Formulas_p200_InverterViewModel>()));
-
-            builder.Services.AddTransient<_90_MoreMenuViewModel>();
-            builder.Services.AddTransient<MoreMenuView>(
-             s => new MoreMenuView(s.GetRequiredService<_90_MoreMenuViewModel>()));
+            builder.Services.AddTransient<FormulasInverterView>(
+             s => new FormulasInverterView(s.GetRequiredService<Formulas_p200_InverterViewModel>()));
 
 
-            builder.Services.AddTransient<_40_AllendBradleyViewModel>();
-            builder.Services.AddTransient<_40_AllendBradleyView>(
-             s => new _40_AllendBradleyView(s.GetRequiredService<_40_AllendBradleyViewModel>()));
+            builder.Services.AddTransient<AllendBradleyViewModel>();
+            builder.Services.AddTransient<AllendBradleyView>(
+             s => new AllendBradleyView(s.GetRequiredService<AllendBradleyViewModel>()));
 
-            builder.Services.AddTransient<_50_ExcelViewModel >();
-            builder.Services.AddTransient<_50_ExcelView>(
-             s => new _50_ExcelView(s.GetRequiredService<_50_ExcelViewModel>()));
+            builder.Services.AddTransient<ExcelViewModel>();
+            builder.Services.AddTransient<ExcelView>(
+             s => new ExcelView(s.GetRequiredService<ExcelViewModel>()));
 
-            builder.Services.AddTransient<_60_OpcViewModel>();
-            builder.Services.AddTransient<_60_OpcView>(
-             s => new _60_OpcView(s.GetRequiredService<_60_OpcViewModel>()));
+            builder.Services.AddTransient<OpcViewModel>();
+            builder.Services.AddTransient<OpcView>(
+             s => new OpcView(s.GetRequiredService<OpcViewModel>()));
 
 
             return builder.Build();
 
-            
+
         }
     }
 
 
 
-    
+
 }

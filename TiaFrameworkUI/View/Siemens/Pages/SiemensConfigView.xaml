@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiaFrameworkUI.View.SiemensConfigView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    Title="Configuration"
+    x:DataType="vm:SiemensConfigViewModel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <VerticalStackLayout Margin="15">
+                <Label Text=" Name" />
+                <Entry Placeholder="1KF1" Text="{Binding Tag.Name}" />
+                <Label Text="Datatype" />
+                <Picker
+                    HorizontalOptions="StartAndExpand"
+                    ItemsSource="{Binding Source=S7DataType, Converter={StaticResource {x:Static rs:ConverterKeys.TextGraphToItemsourceValueConverter}}, Mode=TwoWay}"
+                    SelectedItem="{Binding Tag.DataType, Converter={StaticResource {x:Static rs:ConverterKeys.TextGraphValueConverter}}, ConverterParameter=S7DataType, Mode=TwoWay}" />
+                <Label Text="Type" />
+                <Picker
+                    HorizontalOptions="StartAndExpand"
+                    ItemsSource="{Binding Source=S7Io, Converter={StaticResource {x:Static rs:ConverterKeys.TextGraphToItemsourceValueConverter}}, Mode=TwoWay}"
+                    SelectedItem="{Binding Tag.IO, Converter={StaticResource {x:Static rs:ConverterKeys.TextGraphValueConverter}}, ConverterParameter=S7Io, Mode=TwoWay}" />
+                <Label Text="Byte" />
+                <Entry Placeholder="0" Text="{Binding Tag.Byte}" />
+                <Label Text="Bit" />
+                <Entry Placeholder="0" Text="{Binding Tag.Bit}" />
+                <Label Text="Comment" />
+                <Entry Placeholder="0" Text="{Binding Tag.Comment}" />
+
+                <Button
+                    Command="{Binding SaveCommand}"
+                    StyleClass="FilledButton"
+                    Text="Add" />
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+
+</ContentPage>

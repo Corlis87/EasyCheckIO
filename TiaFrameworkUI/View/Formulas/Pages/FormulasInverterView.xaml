@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiaFrameworkUI.View.FormulasInverterView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    Title="Inverter"
+    x:DataType="vm:Formulas_p200_InverterViewModel">
+    <Grid RowDefinitions="auto,auto,auto">
+        <Grid Grid.Row="0">
+            <uranium:ExpanderView Margin="0,10" IsExpanded="False">
+                <uranium:ExpanderView.Header>
+                    <Label FontAttributes="Bold" Text="99. Motor data" />
+                </uranium:ExpanderView.Header>
+                <VerticalStackLayout Margin="10" Spacing="5">
+                    <material:TextField
+                        Title="99.3 | Motor Type"
+                        IsReadOnly="True"
+                        Text="Asynchronous motor"
+                        TextColor="DimGray" />
+                    <material:TextField
+                        Title="99.4 | Motor Control Mode"
+                        IsReadOnly="True"
+                        Text="DTC"
+                        TextColor="DimGray" />
+                    <material:TextField
+                        Title="99.6 | Current"
+                        Keyboard="Numeric"
+                        Text="{Binding Current}" />
+                    <material:TextField
+                        Title="99.7 | Voltage"
+                        Keyboard="Numeric"
+                        Text="{Binding Voltage}" />
+                    <material:TextField
+                        Title="99.8 | Frequency"
+                        Keyboard="Numeric"
+                        Text="{Binding Frequency}" />
+                    <material:TextField
+                        Title="99.9 | Speed"
+                        Keyboard="Numeric"
+                        Text="{Binding Rpm}" />
+                    <material:TextField
+                        Title="99.10 | Power"
+                        Keyboard="Numeric"
+                        Text="{Binding Power}" />
+                    <material:TextField
+                        Title="99.11 | Cosfi"
+                        Keyboard="Numeric"
+                        Text="{Binding Cosfi}" />
+                    <material:TextField
+                        Title="99.13 | ID run requested"
+                        IsReadOnly="True"
+                        Text="Normal"
+                        TextColor="DimGray" />
+                </VerticalStackLayout>
+            </uranium:ExpanderView>
+        </Grid>
+        <Grid Grid.Row="1">
+            <VerticalStackLayout>
+                <uranium:ExpanderView Margin="0,10" IsExpanded="False">
+                    <uranium:ExpanderView.Header>
+                        <Label FontAttributes="Bold" Text="Additional data" />
+                    </uranium:ExpanderView.Header>
+                    <VerticalStackLayout Margin="5,5" Spacing="5">
+                        <VerticalStackLayout>
+                            <Border>
+                                <VerticalStackLayout Margin="5">
+                                    <Label Text="HFI:" />
+                                    <Grid ColumnDefinitions="auto,auto" RowDefinitions="auto,auto">
+                                        <Label Text="1st Cylinder: 110 [Hz]" />
+                                        <Label
+                                            Grid.Column="1"
+                                            Margin="5,0"
+                                            Text="GearRatio: 62.9" />
+                                        <Label Grid.Row="1" Text="5st Cylinder: 65 [Hz]" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            Margin="5,0"
+                                            Text="GearRatio: 3.6842" />
+                                    </Grid>
+                                </VerticalStackLayout>
+                            </Border>
+                            <Border>
+                                <VerticalStackLayout Margin="5">
+                                    <Label Text="HOMEGA:" />
+                                    <Label Text="MainMotor: 110 [Hz]" />
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+                        <material:TextField
+                            Title="Maximum Frequency"
+                            Keyboard="Numeric"
+                            Text="{Binding MaximumFrequency}" />
+                        <material:TextField
+                            Title="Gear ratio"
+                            Keyboard="Numeric"
+                            Text="{Binding GearRatio}" />
+                    </VerticalStackLayout>
+                </uranium:ExpanderView>
+            </VerticalStackLayout>
+        </Grid>
+        <Grid Grid.Row="2">
+            <VerticalStackLayout Margin="5,10" Spacing="5">
+                <Button
+                    Command="{Binding CalculateCommand}"
+                    StyleClass="FilledButton"
+                    Text="Calculate" />
+                <Grid ColumnDefinitions="250,*" RowDefinitions="auto,auto,auto,auto">
+                    <Grid.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="Margin" Value="5,2" />
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+                        </Style>
+                    </Grid.Resources>
+                    <Label Text="30.12 | Maximum Speed: " />
+                    <Label Grid.Column="1" Text="{Binding MaximumSpeed}" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="30.25 | Maximum Start Current: " />
+                    <Label Grid.Column="1" Text="{Binding MaximumStartCurrent}" />
+                    <Label Grid.Row="1" Text="30.27 | Maximum Current: " />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Text="{Binding MaximumCurrent}" />
+                    <Label Grid.Row="2" Text="46.01 | Speed Scaling:" />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Text="{Binding MaximumSpeed}" />
+                    <Label Grid.Row="3" Text="Max Speed [GearRatio]" />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Text="{Binding MaximumSpeedGearRatio}" />
+                </Grid>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

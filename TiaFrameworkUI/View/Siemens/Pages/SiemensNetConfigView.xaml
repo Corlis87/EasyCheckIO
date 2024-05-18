@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiaFrameworkUI.View.SiemensNetConfigView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    Title="PLC Connection"
+    x:DataType="vm:SiemensNetConfigViewModel">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            x:Name="InfoButton"
+            Command="{Binding SaveCommand}"
+            IconImageSource="floppy.png" />
+    </ContentPage.ToolbarItems>
+    <VerticalStackLayout>
+        <VerticalStackLayout Margin="15">
+            <Label Text=" Name" />
+            <Entry Placeholder="Plc" Text="{Binding Name}" />
+
+            <Label Text=" Address" />
+            <Entry Placeholder="192.168.1.1" Text="{Binding Address}" />
+
+            <Label Text="Slot" />
+            <Entry Placeholder="0" Text="{Binding Slot}" />
+
+            <Label Text="Rack" />
+            <Entry Placeholder="0" Text="{Binding Rack}" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

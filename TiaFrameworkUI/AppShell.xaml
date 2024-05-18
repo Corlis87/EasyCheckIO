@@ -5,50 +5,53 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:view="clr-namespace:TiaFrameworkUI.View"
     xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
-    Shell.TabBarIsVisible="False"
+    Title="ContactBookMaui"
+    FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource Surface},
+                                            Dark={StaticResource SurfaceDark}}"
     FlyoutHeaderBehavior="CollapseOnScroll"
     Shell.FlyoutBehavior="Flyout"
-    Title="ContactBookMaui" >
+    Shell.TabBarIsVisible="False">
     <Shell.FlyoutHeader>
-        <VerticalStackLayout StyleClass="PrimaryContainer" Padding="20">
-            <Label Text="&#xf535;" FontFamily="FontAwesome6Solid"  FontSize="Large" HorizontalTextAlignment="Center" Margin="10" />
-
-
-                <Label Text="ZcheckIO" HorizontalOptions="Center" />
-
+        <VerticalStackLayout Padding="20" StyleClass="PrimaryContainer">
+            <Image
+                Margin="10"
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                Source="../Images/easycheck.svg" />
+            <Label HorizontalOptions="Center" Text="App Theme" />
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Light" VerticalOptions="Center" />
+                <Switch x:Name="themeSwitch" Toggled="ThemeToggled" />
+                <Label Text="Dark" VerticalOptions="Center" />
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </Shell.FlyoutHeader>
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
-   ContentTemplate="{DataTemplate view:_00_MainView}"
-   Route="_00_MainView"
-   Title="Home"
-   Icon="home.png" />
+            Title="Home"
+            ContentTemplate="{DataTemplate view:MainView}"
+            Icon="home.png"
+            Route="_00_MainView" />
         <ShellContent
-   ContentTemplate="{DataTemplate view:_10_SiemensView}"
-   Title="Siemens"    
-   Route="_10_SiemensView"
-   Icon="tia.png"    />
+            Title="Siemens"
+            ContentTemplate="{DataTemplate view:SiemensView}"
+            Icon="tia.png"
+            Route="_10_SiemensView" />
         <ShellContent
-   ContentTemplate="{DataTemplate view:_40_AllendBradleyView}"
-   Title="AllenBradley"    
-   Route="_40_AllendBradleyView"
-   Icon="allenbradley.png" />
+            Title="AllenBradley"
+            ContentTemplate="{DataTemplate view:AllendBradleyView}"
+            Icon="allenbradley.png"
+            Route="_40_AllendBradleyView" />
         <ShellContent
-   ContentTemplate="{DataTemplate view:_30_FormulasView}"
-   Title="Formulas"    
-   Route="_30_FormulasView"
-   Icon="math.png"    />
-        <!--<ShellContent
-    ContentTemplate="{DataTemplate view:_50_ExcelView}"
-    Title="Excel"    
-    Route="Excel"
-    Icon="excel.png" />
+            Title="Formulas"
+            ContentTemplate="{DataTemplate view:FormulasView}"
+            Icon="math.png"
+            Route="_30_FormulasView" />
         <ShellContent
-ContentTemplate="{DataTemplate view:_60_OpcView}"
-Title="Opc"    
-Route="Opc"
-Icon="excel.png" />-->
+            Title="EventLog"
+            ContentTemplate="{DataTemplate view:EventLogView}"
+            Icon="eventlog.png"
+            Route="EventLogView" />
     </FlyoutItem>
 
 </Shell>

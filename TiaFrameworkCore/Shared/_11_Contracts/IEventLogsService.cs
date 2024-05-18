@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TiaFrameworkCore.Shared._03_Models;
 
 namespace TiaFrameworkCore.Shared._11_Contracts
 {
     public interface IEventLogsService
     {
-        void UpdateErrorMessage(byte code, string message, string TypeError);
+        void ReadSystemEventDB(string level);
+        void NextPageSystemEventDB(string level);
+        void PreviewPageSystemEventDB(string level);
+        void ClearPageSystemEventDB(string level);
+        List<EventLogData> SystemEventLogList { get; }
     }
 }

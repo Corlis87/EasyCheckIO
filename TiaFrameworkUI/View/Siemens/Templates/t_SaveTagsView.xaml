@@ -1,31 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
-    <mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
-             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"  
-             x:Class="TiaFrameworkUI.View.t_SaveTagsView"
-          BackgroundColor="#80000000" CloseWhenBackgroundIsClicked="True">
+<mopups:PopupPage
+    x:Class="TiaFrameworkUI.View.t_SaveTagsView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+    xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+    BackgroundColor="#80000000"
+    CloseWhenBackgroundIsClicked="True">
     <mopups:PopupPage.Animation>
         <mopupsanim:ScaleAnimation
-         DurationIn="700"
-         EasingIn="BounceOut"
-         PositionIn="Bottom"
-         PositionOut="Center"
-         ScaleIn="1"
-         ScaleOut="0.7" />
+            DurationIn="700"
+            EasingIn="BounceOut"
+            PositionIn="Bottom"
+            PositionOut="Center"
+            ScaleIn="1"
+            ScaleOut="0.7" />
     </mopups:PopupPage.Animation>
-    <Border WidthRequest="300" HeightRequest="200"
-                Stroke="dimgray"
-                BackgroundColor="#EAEBEE"   
-                HorizontalOptions="Center">
+    <Border
+        BackgroundColor="#EAEBEE"
+        HeightRequest="200"
+        HorizontalOptions="Center"
+        Stroke="dimgray"
+        WidthRequest="300">
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="40,40,40,40"/>
+            <RoundRectangle CornerRadius="40,40,40,40" />
         </Border.StrokeShape>
-        <VerticalStackLayout Spacing="3" Padding="20">
+        <VerticalStackLayout Padding="20" Spacing="3">
             <Label Text="Save File As" />
-            <Label IsVisible="{Binding IsMessageActive}" Text="{Binding Message}" TextColor="Black"  />
-            <Entry Text="{Binding FileName}"  />
-            <Button Text="Save" Command="{Binding SaveFileCommand}" IsVisible="{Binding IsNotSaveTags}"  />
+            <Label
+                IsVisible="{Binding IsMessageActive}"
+                Text="{Binding Message}"
+                TextColor="Black" />
+            <Entry Text="{Binding FileName}" />
+            <Button
+                Command="{Binding SaveFileCommand}"
+                IsVisible="{Binding IsNotSaveTags}"
+                StyleClass="FilledButton"
+                Text="Save" />
             <ActivityIndicator IsRunning="{Binding IsSaveTags}" />
         </VerticalStackLayout>
     </Border>

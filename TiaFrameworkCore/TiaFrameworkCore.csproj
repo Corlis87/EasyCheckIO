@@ -16,25 +16,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Excel\_22_Services\" />
-    <Folder Include="Program\DependecyInjection\" />
-    <Folder Include="Rockwell\_03_DataBlock\" />
-    <Folder Include="Rockwell\_13_Helper\" />
-    <Folder Include="Rockwell\_30_Lgc\" />
-    <Folder Include="Shared\_04_DataType\" />
+    <Folder Include="Shared\_04_Database\" />
     <Folder Include="Shared\_12_Factory\" />
     <Folder Include="ViewModel\Excel\" />
     <Folder Include="ViewModel\Formulas\Model\" />
     <Folder Include="ViewModel\Formulas\Template\" />
-    <Folder Include="ViewModel\Opc\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AsyncAwaitBestPractices" Version="7.0.0" />
     <PackageReference Include="ClosedXML" Version="0.102.1" />
-    <PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-    <PackageReference Include="HslCommunication" Version="11.7.0" />
+    <PackageReference Include="HslCommunication" Version="11.8.2" />
+    <PackageReference Include="Serilog" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+    <PackageReference Include="Serilog.Sinks.SQLite.Maui" Version="1.9.5" />
     <PackageReference Include="Sharp7" Version="1.1.84" />
-    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.6" />
-    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.6" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.20" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.20" />
+    <PackageReference Include="SqlSugarCore" Version="5.1.4.152" />
   </ItemGroup>
 </Project>

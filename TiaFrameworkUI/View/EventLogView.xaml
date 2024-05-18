@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiaFrameworkUI.View.EventLogView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    Title="EventLogView">
+    <Grid RowDefinitions="auto,*,auto">
+        <Grid Grid.Row="0" ColumnDefinitions="*,auto">
+            <material:PickerField
+                Margin="5,0"
+                AllowClear="False"
+                Icon="{FontImageSource FontFamily=FASolid,
+                                       Glyph={x:Static rs:FASolidIcons.Filter}}"
+                SelectedItem="{Binding SelectedLevel}"
+                TextColor="{AppThemeBinding {StaticResource OnBackground},
+                                            Dark={StaticResource OnBackgroundDark}}">
+                <material:PickerField.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>All</x:String>
+                        <x:String>Verbose</x:String>
+                        <x:String>Debug</x:String>
+                        <x:String>Information</x:String>
+                        <x:String>Warning</x:String>
+                        <x:String>Error</x:String>
+                    </x:Array>
+                </material:PickerField.ItemsSource>
+            </material:PickerField>
+            <Button
+                Grid.Column="1"
+                Padding="0"
+                Command="{Binding RefreshSystemEventLogCommand}"
+                FontFamily="FASolid"
+                FontSize="20"
+                HeightRequest="45"
+                StyleClass="FilledButton"
+                Text="{x:Static rs:FASolidIcons.Database}"
+                WidthRequest="45" />
+        </Grid>
+        <Grid Grid.Row="1" RowDefinitions="auto,*">
+            <ScrollView Orientation="Both">
+                <material:DataGrid
+                    Margin="5"
+                    HorizontalOptions="Center"
+                    ItemsSource="{Binding SystemEventLogList}">
+                    <material:DataGrid.EmptyView>
+                        <VerticalStackLayout Margin="80,20">
+                            <Image
+                                HeightRequest="40"
+                                HorizontalOptions="Center"
+                                Source="{FontImageSource FontFamily=FASolid,
+                                                         Glyph={x:Static rs:FASolidIcons.Database},
+                                                         Color={AppThemeBinding Light={StaticResource OnSurface},
+                                                                                Dark={StaticResource OnSurfaceDark}}}"
+                                VerticalOptions="Center"
+                                WidthRequest="40" />
+                            <Label HorizontalOptions="Center" Text="No data available..." />
+                        </VerticalStackLayout>
+                    </material:DataGrid.EmptyView>
+                    <material:DataGrid.Columns>
+                        <material:DataGridColumn Title="Id" ValueBinding="{Binding id}" />
+                        <material:DataGridColumn Title="Level">
+                            <material:DataGridColumn.CellItemTemplate>
+                                <DataTemplate>
+                                    <Image
+                                        Margin="15,0"
+                                        HeightRequest="15"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Level, Converter={StaticResource LoggerLevelToIconConverter}}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="15" />
+                                </DataTemplate>
+                            </material:DataGridColumn.CellItemTemplate>
+                        </material:DataGridColumn>
+                        <material:DataGridColumn Title="Message">
+                            <material:DataGridColumn.CellItemTemplate>
+                                <DataTemplate>
+                                    <Label
+                                        Margin="15,0"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="Start"
+                                        Text="{Binding RenderedMessage}"
+                                        VerticalOptions="Center" />
+                                </DataTemplate>
+                            </material:DataGridColumn.CellItemTemplate>
+                        </material:DataGridColumn>
+
+                    </material:DataGrid.Columns>
+                </material:DataGrid>
+            </ScrollView>
+        </Grid>
+        <Grid
+            Grid.Row="2"
+            Margin="10,5"
+            ColumnDefinitions="*,*,*"
+            ColumnSpacing="5">
+            <Button
+                Grid.Column="0"
+                Command="{Binding PreviewPageSystemEventLogCommand}"
+                StyleClass="FilledButton"
+                Text="Preview" />
+            <Button
+                Grid.Column="1"
+                Command="{Binding ClearSystemEventLogCommand}"
+                StyleClass="FilledButton"
+                Text="Clear" />
+            <Button
+                Grid.Column="2"
+                Command="{Binding NextPageSystemEventLogCommand}"
+                StyleClass="FilledButton"
+                Text="Next" />
+        </Grid>
+    </Grid>
+</ContentPage>
+<!--<DataGrid
+           Grid.Row="1"
+           Margin="20,10,20,10"
+           AutoGenerateColumns="False"
+           Background="Transparent"
+           CanUserAddRows="False"
+           CanUserSortColumns="False"
+           ItemsSource="{Binding LogsModel.LogsList}">
+    <DataGrid.Columns>
+        <DataGridTextColumn
+                   Width="0.4*"
+                   Binding="{Binding id}"
+                   Header="序号" />
+        <DataGridTextColumn
+                   Width="1.2*"
+                   Binding="{Binding Timestamp}"
+                   Header="时间戳" />-->
+<!--<DataGridTextColumn
+               Width="0.7*"
+               Binding="{Binding Level}"
+               Header="级别" />-->
+<!--
+        <DataGridTemplateColumn Width="0.7*" Header="级别">
+            <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                    <Border
+                               Width="80"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Background="{Binding Level, Converter={StaticResource logsTypeToBackgroundConverter}}"
+                               CornerRadius="5">
+                        <TextBlock
+                                   Padding="5,3"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"
+                                   Text="{Binding Level}" />
+                    </Border>
+                </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTextColumn
+                   Width="0.5*"
+                   Binding="{Binding Exception}"
+                   Header="异常" />
+        <DataGridTextColumn Width="3*" Binding="{Binding RenderedMessage}" Header="呈现信息">
+            <DataGridTextColumn.ElementStyle>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+                    <Setter Property="ToolTipService.ToolTip" Value="{Binding RenderedMessage}" />
+                </Style>
+            </DataGridTextColumn.ElementStyle>
+        </DataGridTextColumn>
+        <DataGridTextColumn
+                   Width="0.5*"
+                   Binding="{Binding Properties}"
+                   Header="属性" />
+    </DataGrid.Columns>
+    <DataGrid.RowStyle>
+        <Style TargetType="DataGridRow">
+            <Setter Property="Height" Value="AUTO" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+    </DataGrid.RowStyle>
+</DataGrid>-->

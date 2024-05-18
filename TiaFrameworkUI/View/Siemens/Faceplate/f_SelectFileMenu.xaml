@@ -1,24 +1,48 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TiaFrameworkUI.View.f_SelectFileMenu"
-             xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
-             x:Name="this"
-             >
+<ContentView
+    x:Class="TiaFrameworkUI.View.f_SelectFileMenu"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+    x:Name="this">
     <Grid>
         <Grid RowDefinitions="auto,auto,auto,auto" RowSpacing="5">
-            <Button WidthRequest="35" HeightRequest="35" Padding="0"
-                    Command="{Binding LoadFile,Source={x:Reference this}}"
-                    Text="{x:Static rs:FASolidIcons.Play}"  FontFamily="FASolid"/>
-            <Button Grid.Row="1"  WidthRequest="35" HeightRequest="35" Padding="0"
-                    Command="{Binding ExportFile,Source={x:Reference this}}"
-                    Text="{x:Static rs:FASolidIcons.FileExcel}"  FontFamily="FASolid" />
-            <Button Grid.Row="2"  WidthRequest="35" HeightRequest="35" Padding="0"
-                    Command="{Binding RemoveFile,Source={x:Reference this}}"
-                    Text="{x:Static rs:FASolidIcons.Trash}"  FontFamily="FASolid"   />
-            <Button Grid.Row="3" WidthRequest="50" HeightRequest="50" Padding="0"
-                    Command="{Binding CloseMenu,Source={x:Reference this}}"
-                    Text="{x:Static rs:FASolidIcons.Xmark}"  FontFamily="FASolid" FontSize="35" />
+            <Button
+                Padding="0"
+                Command="{Binding LoadFile, Source={x:Reference this}}"
+                FontFamily="FASolid"
+                HeightRequest="35"
+                StyleClass="FilledButton"
+                Text="{x:Static rs:FASolidIcons.Play}"
+                WidthRequest="35" />
+            <Button
+                Grid.Row="1"
+                Padding="0"
+                Command="{Binding ExportFile, Source={x:Reference this}}"
+                FontFamily="FASolid"
+                HeightRequest="35"
+                StyleClass="FilledButton"
+                Text="{x:Static rs:FASolidIcons.FileExcel}"
+                WidthRequest="35" />
+            <Button
+                Grid.Row="2"
+                Padding="0"
+                Command="{Binding RemoveFile, Source={x:Reference this}}"
+                FontFamily="FASolid"
+                HeightRequest="35"
+                StyleClass="FilledButton"
+                Text="{x:Static rs:FASolidIcons.Trash}"
+                WidthRequest="35" />
+            <Button
+                Grid.Row="3"
+                Padding="0"
+                Command="{Binding CloseMenu, Source={x:Reference this}}"
+                FontFamily="FASolid"
+                FontSize="35"
+                HeightRequest="50"
+                StyleClass="FilledButton"
+                Text="{x:Static rs:FASolidIcons.Xmark}"
+                WidthRequest="50" />
         </Grid>
 
     </Grid>

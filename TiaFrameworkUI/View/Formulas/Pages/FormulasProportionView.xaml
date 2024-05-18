@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiaFrameworkUI.View.Form.FormulasProportionView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Name="this"
+    Title="Proportion">
+    <Grid>
+        <Grid ColumnDefinitions="*,auto,*">
+            <Grid
+                Grid.Column="1"
+                Margin="0,15,0,0"
+                ColumnDefinitions="auto"
+                HorizontalOptions="Center"
+                RowDefinitions="auto,auto,auto">
+                <HorizontalStackLayout>
+                    <Entry
+                        FontSize="Large"
+                        HorizontalTextAlignment="Center"
+                        MaximumWidthRequest="125"
+                        MinimumWidthRequest="100"
+                        Text="{Binding ValueA}"
+                        VerticalOptions="Center">
+                        <Entry.Behaviors>
+                            <toolkit:EventToCommandBehavior Command="{Binding Source={x:Reference this}, Path=BindingContext.ProportionValueChangedCommand}" EventName="TextChanged" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label
+                        FontSize="Large"
+                        Text=":"
+                        VerticalOptions="Center" />
+                    <Entry
+                        FontSize="Large"
+                        HorizontalTextAlignment="Center"
+                        MaximumWidthRequest="125"
+                        MinimumWidthRequest="100"
+                        Text="{Binding ValueB}"
+                        VerticalOptions="Center">
+                        <Entry.Behaviors>
+                            <toolkit:EventToCommandBehavior Command="{Binding Source={x:Reference this}, Path=BindingContext.ProportionValueChangedCommand}" EventName="TextChanged" />
+                        </Entry.Behaviors>
+                    </Entry>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Row="1">
+                    <Entry
+                        FontSize="Large"
+                        HorizontalTextAlignment="Center"
+                        MaximumWidthRequest="125"
+                        MinimumWidthRequest="100"
+                        Text="{Binding ValueC}"
+                        VerticalOptions="Center">
+                        <Entry.Behaviors>
+                            <toolkit:EventToCommandBehavior Command="{Binding Source={x:Reference this}, Path=BindingContext.ProportionValueChangedCommand}" EventName="TextChanged" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label
+                        FontSize="Large"
+                        Text=":"
+                        VerticalOptions="Center" />
+                    <Label
+                        FontSize="Large"
+                        HorizontalTextAlignment="Center"
+                        MaximumWidthRequest="125"
+                        MinimumWidthRequest="100"
+                        Text="{Binding Result, StringFormat='{}{0:F2}'}"
+                        VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <VerticalStackLayout Grid.Row="2" Margin="0,15,0,0">
+                    <Label FontSize="Micro" Text="FORMULA FOR CALCULATION OF PROPORTIONS" />
+                    <Label HorizontalTextAlignment="Center" Text="A : B = C : D" />
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

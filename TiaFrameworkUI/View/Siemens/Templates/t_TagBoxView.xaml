@@ -1,47 +1,79 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TiaFrameworkUI.View.t_TagBoxView"
-             xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
-             xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
-             xmlns:local="clr-namespace:TiaFrameworkUI.View"
-             >
-    <SwipeView  Margin="10"  >
+<ContentView
+    x:Class="TiaFrameworkUI.View.t_TagBoxView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TiaFrameworkUI.View"
+    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore">
+    <SwipeView Margin="10">
         <SwipeView.RightItems>
-            <SwipeItems Mode="Reveal" >
-                <SwipeItem Text="Scale" BackgroundColor="#EAEBEE" IconImageSource="scaling.png"
-                           IsVisible="{Binding ScalingMenuVisibility}"
-                           Command="{Binding ScalingPopoutCommand}" CommandParameter="{Binding .}"  />
+            <SwipeItems Mode="Reveal">
+                <SwipeItem
+                    BackgroundColor="#EAEBEE"
+                    Command="{Binding ScalingPopoutCommand}"
+                    CommandParameter="{Binding .}"
+                    IconImageSource="scaling.png"
+                    IsVisible="{Binding ScalingMenuVisibility}"
+                    Text="Scale" />
             </SwipeItems>
         </SwipeView.RightItems>
-        <Frame Padding="0"  >
-            <Grid  ColumnDefinitions="*,20" RowDefinitions="auto" >
-              
-                <Grid RowDefinitions="auto,auto"  >
+        <Frame Padding="0">
+            <Grid ColumnDefinitions="*,20" RowDefinitions="auto">
+
+                <Grid RowDefinitions="auto,auto">
                     <VerticalStackLayout Margin="10">
                         <Grid ColumnDefinitions="auto,*">
-                            <Label   Text="{Binding Name}"  HorizontalOptions="Start" FontAttributes="Bold" VerticalOptions="Center" />
-                            <Button Grid.Column="1" Text="{x:Static rs:FASolidIcons.CommentDots}"  BackgroundColor="Transparent" TextColor="Black"  FontFamily="FASolid" FontSize="20" HorizontalOptions="End"  Clicked="Button_Clicked" />
+                            <Label
+                                FontAttributes="Bold"
+                                HorizontalOptions="Start"
+                                Text="{Binding Name}"
+                                VerticalOptions="Center" />
+                            <Button
+                                Grid.Column="1"
+                                BackgroundColor="Transparent"
+                                Clicked="Button_Clicked"
+                                FontFamily="FASolid"
+                                FontSize="20"
+                                HorizontalOptions="End"
+                                Text="{x:Static rs:FASolidIcons.CommentDots}"
+                                TextColor="Black" />
                         </Grid>
                         <Label Text="{Binding Address}" />
                         <Label Text="{Binding Comment}" />
-                        <Label   Margin="5,0,0,0" Grid.Row="1" Grid.Column="0" Text="{Binding Content}" />
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="5,0,0,0"
+                            Text="{Binding Content}" />
                         <HorizontalStackLayout>
-                            <Rectangle Fill="{Binding Status,Converter={StaticResource { x:Static rs:ConverterKeys.TextColorValueConverter}},ConverterParameter=TestedStatus,Mode=OneWay}" HeightRequest="25" WidthRequest="25"/>
-                            <Picker ItemsSource="{Binding Source=TestedStatus,Converter={StaticResource {x:Static rs:ConverterKeys.TextGraphToItemsourceValueConverter}},Mode=TwoWay}"                
-                                    SelectedItem="{Binding Status,Converter={StaticResource {x:Static rs:ConverterKeys.TextGraphValueConverter}},ConverterParameter=TestedStatus, Mode=TwoWay}"   />
+                            <Rectangle
+                                Fill="{Binding Status, Converter={StaticResource {x:Static rs:ConverterKeys.TextColorValueConverter}}, ConverterParameter=TestedStatus, Mode=OneWay}"
+                                HeightRequest="25"
+                                WidthRequest="25" />
+                            <Picker ItemsSource="{Binding Source=TestedStatus, Converter={StaticResource {x:Static rs:ConverterKeys.TextGraphToItemsourceValueConverter}}, Mode=TwoWay}" SelectedItem="{Binding Status, Converter={StaticResource {x:Static rs:ConverterKeys.TextGraphValueConverter}}, ConverterParameter=TestedStatus, Mode=TwoWay}" />
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
-                    <Grid Grid.Row="1" x:Name="Notes" IsVisible="false"  >
-                        <Entry  Text="{Binding Notes}"    Placeholder="Notes"   />
+                    <Grid
+                        x:Name="Notes"
+                        Grid.Row="1"
+                        IsVisible="false">
+                        <Entry Placeholder="Notes" Text="{Binding Notes}" />
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Rectangle  Fill="{Binding IO,Converter={StaticResource TextColorValueConverter}, ConverterParameter=S7Io,Mode=OneWay}"  />
-                    <Label Text="{Binding IO,Converter={StaticResource TextGraphValueConverter}, ConverterParameter=S7IoAbbreviantion,Mode=OneWay}" 
-                           TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="10"   VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Rotation="90" />
+                    <Rectangle Fill="{Binding IO, Converter={StaticResource TextColorValueConverter}, ConverterParameter=S7Io, Mode=OneWay}" />
+                    <Label
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Rotation="90"
+                        Text="{Binding IO, Converter={StaticResource TextGraphValueConverter}, ConverterParameter=S7IoAbbreviantion, Mode=OneWay}"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
                 </Grid>
-             
+
             </Grid>
         </Frame>
     </SwipeView>

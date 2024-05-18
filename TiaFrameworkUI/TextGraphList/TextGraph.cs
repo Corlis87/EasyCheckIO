@@ -106,6 +106,14 @@ namespace TiaFrameworkUI.TextGraphList
             .Build();
 
             AddTable(nameof(TestedStatus), TestedStatus);
+
+            var FilterType = builder.CreateItem(true)
+         .AddMessage(0, "Address")
+         .AddMessage(1, "Description")
+         .AddMessage(2, "Name")
+         .Build();
+
+            AddTable(nameof(FilterType),FilterType);
         }
         #endregion
     }

@@ -13,9 +13,8 @@ namespace TiaFrameworkCore.Shared._11_Contracts
         OperationResult Connect(S7NetConfig HwConfig);
         OperationResult Disconnect();
         void RefreshTagsTask();
-       // void AdjMultiVrb(IEnumerable<S7Tag> s7ModulesList);
-        event Action TagsChanged;
         void CalculateBuffer(IEnumerable<S7Tag> s7ModulesList);
         void CreateContentFromVariableList(IEnumerable<S7Tag> s7ModulesList);
+        event Action TagsChanged;
     }
 }
