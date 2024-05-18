@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkUI.Converters
+namespace EasyCheckIoUI.Converters
 {
     public class ByteToBitConverter : IValueConverter
     {

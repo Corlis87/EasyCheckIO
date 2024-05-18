@@ -1,6 +1,6 @@
 ﻿using static System.Net.Mime.MediaTypeNames;
 
-namespace TiaFrameworkCtrls.Controls
+namespace EasyCheckIoCtrls.Controls
 {
 	public class ProgressBarDrawable : IDrawable
 	{

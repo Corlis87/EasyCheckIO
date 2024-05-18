@@ -1,5 +1,5 @@
-namespace TiaFrameworkUI.View;
-using TiaFrameworkCore.ViewModel;
+namespace EasyCheckIoUI.View;
+using EasyCheckIoCore.ViewModel;
 public partial class MainView : ContentPage
 {
 	public MainView(object bindingContext)

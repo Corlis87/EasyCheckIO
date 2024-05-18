@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:TiaFrameworkUI.View"
-                  xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
-             xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+             xmlns:view="clr-namespace:EasyCheckIoUI.View"
+                  xmlns:rs="clr-namespace:EasyCheckIoUI.Resources"
+             xmlns:vm="clr-namespace:EasyCheckIoCore.ViewModel;assembly=EasyCheckIoCore"
              x:DataType="vm:t_S7TagViewModel" 
              x:Name="this"
-             x:Class="TiaFrameworkUI.View.uc_InputModule"  >
+             x:Class="EasyCheckIoUI.View.uc_InputModule"  >
     <ContentView.Resources>
         <Style TargetType="Label">
             <Setter Property="TextColor" Value="#BCC2CD"/>

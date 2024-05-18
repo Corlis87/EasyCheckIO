@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.Shared._03_Models;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._03_Models;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using DocumentFormat.OpenXml.Office2010.ExcelAc;
 using DocumentFormat.OpenXml.Drawing.Charts;
 
-namespace TiaFrameworkCore.ViewModel
+namespace EasyCheckIoCore.ViewModel
 {
     public partial class EventLogViewModel : BaseViewModel
     {

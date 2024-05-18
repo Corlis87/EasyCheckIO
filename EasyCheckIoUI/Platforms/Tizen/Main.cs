@@ -2,7 +2,7 @@ using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using System;
 
-namespace TiaFrameworkUI
+namespace EasyCheckIoUI
 {
     internal class Program : MauiApplication
     {

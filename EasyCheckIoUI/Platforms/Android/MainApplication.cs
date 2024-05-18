@@ -7,7 +7,7 @@ using Microsoft.Maui.Platform;
 
 
 
-namespace TiaFrameworkUI
+namespace EasyCheckIoUI
 {
     [Application]
     public class MainApplication : MauiApplication

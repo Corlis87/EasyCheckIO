@@ -8,9 +8,9 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkUI.TextGraphList;
+using EasyCheckIoUI.TextGraphList;
 
-namespace TiaFrameworkUI.Converters
+namespace EasyCheckIoUI.Converters
 {
     public class LoggerLevelToIconConverter : IValueConverter
     {

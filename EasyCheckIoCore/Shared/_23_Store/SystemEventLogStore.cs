@@ -13,10 +13,10 @@ using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._03_Models;
-using TiaFrameworkCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._03_Models;
+using EasyCheckIoCore.Shared._11_Contracts;
 
-namespace TiaFrameworkCore.Shared._23_Store
+namespace EasyCheckIoCore.Shared._23_Store
 {
     public class SystemEventLogStore : IStore<List<EventLogData>>
     {

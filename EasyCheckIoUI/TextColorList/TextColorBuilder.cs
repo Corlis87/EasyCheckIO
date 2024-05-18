@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Color = Microsoft.Maui.Graphics.Color;
 
-namespace TiaFrameworkUI.TextGraphList
+namespace EasyCheckIoUI.TextGraphList
 {
     public class TextColorBuilder
     {

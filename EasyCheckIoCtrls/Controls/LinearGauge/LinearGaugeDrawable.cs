@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
 
-namespace TiaFrameworkCtrls.Controls
+namespace EasyCheckIoCtrls.Controls
 {
 	public class LinearGaugeDrawable : IDrawable
 	{

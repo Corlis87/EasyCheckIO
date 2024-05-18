@@ -1,4 +1,4 @@
-namespace TiaFrameworkUI.View;
+namespace EasyCheckIoUI.View;
 
 public partial class f_DigitalInput : ContentPage
 {

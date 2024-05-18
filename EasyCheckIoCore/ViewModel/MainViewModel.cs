@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.Shared._21_Command;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._21_Command;
 
-namespace TiaFrameworkCore.ViewModel
+namespace EasyCheckIoCore.ViewModel
 {
     public partial class MainViewModel: BaseViewModel
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._11_Contracts;
 
-namespace TiaFrameworkCore.Shared._03_DataBlock
+namespace EasyCheckIoCore.Shared._03_DataBlock
 {
     public class TaskInterrupt:ITaskInterrupt
     {

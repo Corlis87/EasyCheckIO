@@ -4,12 +4,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Excel._08_Builder;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.Excel._03_DataBlock;
-using TiaFrameworkCore.Siemens._03_DataBlock;
+using EasyCheckIoCore.Excel._08_Builder;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.Excel._03_DataBlock;
+using EasyCheckIoCore.Siemens._03_DataBlock;
 
-namespace TiaFrameworkCore.Excel._30_Lgc
+namespace EasyCheckIoCore.Excel._30_Lgc
 {
     public class ExcelLgc : IExcelLgc
     {

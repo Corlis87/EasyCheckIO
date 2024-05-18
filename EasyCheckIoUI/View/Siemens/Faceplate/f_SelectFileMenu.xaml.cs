@@ -1,6 +1,6 @@
 using System.Windows.Input;
 
-namespace TiaFrameworkUI.View;
+namespace EasyCheckIoUI.View;
 
 public partial class f_SelectFileMenu : ContentView
 {

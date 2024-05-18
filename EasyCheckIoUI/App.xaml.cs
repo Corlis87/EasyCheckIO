@@ -1,6 +1,6 @@
-﻿using TiaFrameworkUI.View;
+﻿using EasyCheckIoUI.View;
 
-namespace TiaFrameworkUI
+namespace EasyCheckIoUI
 {
     public partial class App : Application
     {

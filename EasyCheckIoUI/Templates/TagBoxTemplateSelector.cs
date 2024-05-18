@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._03_DataBlock;
-using TiaFrameworkCore.ViewModel;
+using EasyCheckIoCore.Shared._03_DataBlock;
+using EasyCheckIoCore.ViewModel;
 
-namespace TiaFrameworkUI.Templates
+namespace EasyCheckIoUI.Templates
 {
     public class TagBoxTemplateSelector : DataTemplateSelector
     {
@@ -19,11 +19,11 @@ namespace TiaFrameworkUI.Templates
             {
             switch(tag.IO) 
                 {
-                    case TiaFrameworkCore.Shared._06_Enum.eS7io.Input:
-                    case TiaFrameworkCore.Shared._06_Enum.eS7io.Output:
+                    case EasyCheckIoCore.Shared._06_Enum.eS7io.Input:
+                    case EasyCheckIoCore.Shared._06_Enum.eS7io.Output:
                         return DigitalTagBox;
-                    case TiaFrameworkCore.Shared._06_Enum.eS7io.AnalogicInput:
-                    case TiaFrameworkCore.Shared._06_Enum.eS7io.AnalogicOutput:
+                    case EasyCheckIoCore.Shared._06_Enum.eS7io.AnalogicInput:
+                    case EasyCheckIoCore.Shared._06_Enum.eS7io.AnalogicOutput:
                         return AnalogicTagBox;
                 }
             }

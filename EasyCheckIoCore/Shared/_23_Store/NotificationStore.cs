@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCore.Shared._23_Store
+namespace EasyCheckIoCore.Shared._23_Store
 {
     public class NotificationStore : ObservableObject
     {

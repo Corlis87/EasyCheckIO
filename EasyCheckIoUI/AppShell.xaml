@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="TiaFrameworkUI.AppShell"
+    x:Class="EasyCheckIoUI.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:view="clr-namespace:TiaFrameworkUI.View"
-    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    xmlns:view="clr-namespace:EasyCheckIoUI.View"
+    xmlns:vm="clr-namespace:EasyCheckIoCore.ViewModel;assembly=EasyCheckIoCore"
     Title="ContactBookMaui"
     FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource Surface},
                                             Dark={StaticResource SurfaceDark}}"

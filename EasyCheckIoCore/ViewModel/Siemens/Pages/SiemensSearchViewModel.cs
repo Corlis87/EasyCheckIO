@@ -7,11 +7,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._03_DataBlock;
-using TiaFrameworkCore.Shared._06_Enum;
-using TiaFrameworkCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Shared._06_Enum;
+using EasyCheckIoCore.Shared._11_Contracts;
 
-namespace TiaFrameworkCore.ViewModel
+namespace EasyCheckIoCore.ViewModel
 {
     public partial class SiemensSearchViewModel : BaseViewModel
     {

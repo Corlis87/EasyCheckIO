@@ -1,6 +1,6 @@
 using Mopups.Services;
 
-namespace TiaFrameworkUI.View;
+namespace EasyCheckIoUI.View;
 
 public partial class t_SaveTagsView
 { 

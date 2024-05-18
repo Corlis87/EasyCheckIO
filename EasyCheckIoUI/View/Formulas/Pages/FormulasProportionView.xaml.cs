@@ -1,4 +1,4 @@
-namespace TiaFrameworkUI.View.Form;
+namespace EasyCheckIoUI.View.Form;
 
 public partial class FormulasProportionView : ContentPage
 {

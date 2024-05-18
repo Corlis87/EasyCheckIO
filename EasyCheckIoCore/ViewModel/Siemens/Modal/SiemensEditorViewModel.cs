@@ -9,13 +9,13 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._06_Enum;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.Shared._24_Messenger;
-using TiaFrameworkCore.Siemens._03_DataBlock;
-using TiaFrameworkCore.Siemens._30_Lgc;
+using EasyCheckIoCore.Shared._06_Enum;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._24_Messenger;
+using EasyCheckIoCore.Siemens._03_DataBlock;
+using EasyCheckIoCore.Siemens._30_Lgc;
 
-namespace TiaFrameworkCore.ViewModel
+namespace EasyCheckIoCore.ViewModel
 {
     public partial class SiemensEditorViewModel : BaseViewModel
     {

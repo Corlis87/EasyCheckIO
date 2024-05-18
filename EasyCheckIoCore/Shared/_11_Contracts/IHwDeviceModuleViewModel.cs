@@ -4,9 +4,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Shared._03_DataBlock;
 
-namespace TiaFrameworkCore.Shared._11_Contracts
+namespace EasyCheckIoCore.Shared._11_Contracts
 {
     public interface IHwDeviceModuleViewModel
     {

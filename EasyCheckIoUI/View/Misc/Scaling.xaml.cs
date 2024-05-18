@@ -1,9 +1,9 @@
 using Mopups.Services;
 
-using TiaFrameworkCore.Shared._03_DataBlock;
-using TiaFrameworkCore.ViewModel;
+using EasyCheckIoCore.Shared._03_DataBlock;
+using EasyCheckIoCore.ViewModel;
 
-namespace TiaFrameworkUI.View
+namespace EasyCheckIoUI.View
 {
 	public partial class Scaling
     {

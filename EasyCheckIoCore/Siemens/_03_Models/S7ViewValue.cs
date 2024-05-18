@@ -6,9 +6,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.ViewModel;
+using EasyCheckIoCore.ViewModel;
 
-namespace TiaFrameworkCore.Siemens._03_DataBlock
+namespace EasyCheckIoCore.Siemens._03_DataBlock
 {
     public class S7ViewValue : ObservableObject
     {

@@ -1,6 +1,6 @@
 using DocumentFormat.OpenXml.ExtendedProperties;
 
-namespace TiaFrameworkUI.View;
+namespace EasyCheckIoUI.View;
 
 public partial class t_TagBoxView : ContentView
 {

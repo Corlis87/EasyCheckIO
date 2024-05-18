@@ -1,7 +1,7 @@
 using Serilog;
 using Serilog.Core;
 
-namespace TiaFrameworkUI.View;
+namespace EasyCheckIoUI.View;
 
 public partial class EventLogView : ContentPage
 {

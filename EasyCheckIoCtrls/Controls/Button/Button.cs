@@ -2,7 +2,7 @@
 
 using System.Windows.Input;
 
-namespace TiaFrameworkCtrls.Controls
+namespace EasyCheckIoCtrls.Controls
 {
 	public class Button : GraphicsView
 	{

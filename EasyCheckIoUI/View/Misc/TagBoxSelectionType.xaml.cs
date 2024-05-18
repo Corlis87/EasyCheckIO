@@ -1,6 +1,6 @@
 using Microsoft.Maui.Controls;
 
-namespace TiaFrameworkUI.View;
+namespace EasyCheckIoUI.View;
 
 public partial class TagBoxSelectionType : ContentView
 {

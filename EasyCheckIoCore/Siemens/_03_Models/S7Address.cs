@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCore.Siemens._03_DataBlock
+namespace EasyCheckIoCore.Siemens._03_DataBlock
 {
     public class S7Address
     {

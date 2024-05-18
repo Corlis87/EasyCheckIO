@@ -5,15 +5,15 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.Shared._22_Services;
-using TiaFrameworkCore.Siemens._03_DataBlock;
-using TiaFrameworkCore.ViewModel;
-using TiaFrameworkCore.ViewModel.Siemens.Template;
-using TiaFrameworkUI.View;
-using TiaFrameworkUI.View.Form;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._22_Services;
+using EasyCheckIoCore.Siemens._03_DataBlock;
+using EasyCheckIoCore.ViewModel;
+using EasyCheckIoCore.ViewModel.Siemens.Template;
+using EasyCheckIoUI.View;
+using EasyCheckIoUI.View.Form;
 
-namespace TiaFrameworkUI.Services
+namespace EasyCheckIoUI.Services
 {
     public class NavigationService : INavigationService
     {

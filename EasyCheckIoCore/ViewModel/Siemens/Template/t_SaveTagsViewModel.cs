@@ -5,16 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Program.Extensions;
-using TiaFrameworkCore.Shared._03_DataBlock;
-using TiaFrameworkCore.Shared._06_Enum;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.Shared._24_Messenger;
-using TiaFrameworkCore.Shared._80_Util;
-using TiaFrameworkCore.Siemens._13_Helper;
-using TiaFrameworkCore.Siemens._30_Lgc;
+using EasyCheckIoCore.Program.Extensions;
+using EasyCheckIoCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Shared._06_Enum;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._24_Messenger;
+using EasyCheckIoCore.Shared._80_Util;
+using EasyCheckIoCore.Siemens._13_Helper;
+using EasyCheckIoCore.Siemens._30_Lgc;
 
-namespace TiaFrameworkCore.ViewModel.Siemens.Template
+namespace EasyCheckIoCore.ViewModel.Siemens.Template
 {
     public partial class t_SaveTagsViewModel : BaseViewModel
     {

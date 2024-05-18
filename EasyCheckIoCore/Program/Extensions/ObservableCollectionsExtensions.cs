@@ -5,9 +5,9 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Shared._03_DataBlock;
 
-namespace TiaFrameworkCore.Program.Extensions
+namespace EasyCheckIoCore.Program.Extensions
 {
     public class ObservableCollectionCarousel<T> : ObservableCollection<T>
     {

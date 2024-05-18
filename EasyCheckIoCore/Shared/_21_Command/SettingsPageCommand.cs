@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace TiaFrameworkCore.Shared._21_Command
+namespace EasyCheckIoCore.Shared._21_Command
 {
     public class SettingsPageCommand : ICommand
     {

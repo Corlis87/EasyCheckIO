@@ -1,9 +1,9 @@
 ﻿using Microsoft.Maui.Controls.Shapes;
 using System.Collections;
-using TiaFrameworkCtrls.Extensions;
-using TiaFrameworkCtrls.Util;
+using EasyCheckIoCtrls.Extensions;
+using EasyCheckIoCtrls.Util;
 
-namespace TiaFrameworkCtrls.Controls.TextField
+namespace EasyCheckIoCtrls.Controls.TextField
 {
     public partial class InputField : Grid
     {

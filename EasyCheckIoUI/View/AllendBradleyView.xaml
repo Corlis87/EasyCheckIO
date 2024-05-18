@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="TiaFrameworkUI.View.AllendBradleyView"
+    x:Class="EasyCheckIoUI.View.AllendBradleyView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:ctrl="clr-namespace:TiaFrameworkCtrls.Controls;assembly=TiaFrameworkCtrls"
+    xmlns:ctrl="clr-namespace:EasyCheckIoCtrls.Controls;assembly=EasyCheckIoCtrls"
     Title="AllendBradley">
     <Grid>
         <Grid RowDefinitions="auto,auto,auto">

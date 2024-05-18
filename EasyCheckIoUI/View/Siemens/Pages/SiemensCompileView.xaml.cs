@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace TiaFrameworkUI.View;
+namespace EasyCheckIoUI.View;
 
 public partial class SiemensCompileView : ContentPage
 {

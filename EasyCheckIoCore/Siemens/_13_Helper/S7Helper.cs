@@ -8,13 +8,13 @@ using System.Linq.Expressions;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._06_Enum;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.ViewModel;
+using EasyCheckIoCore.Shared._06_Enum;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.ViewModel;
 using static Sharp7.S7Consts;
-using S7Tag = TiaFrameworkCore.Siemens._03_DataBlock.S7Tag;
+using S7Tag = EasyCheckIoCore.Siemens._03_DataBlock.S7Tag;
 
-namespace TiaFrameworkCore.Siemens._13_Helper
+namespace EasyCheckIoCore.Siemens._13_Helper
 {
     public class S7Helper : IS7Helper
     {

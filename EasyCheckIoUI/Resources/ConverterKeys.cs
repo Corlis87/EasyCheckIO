@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkUI.Resources
+namespace EasyCheckIoUI.Resources
 {
     public  class ConverterKeys
     {

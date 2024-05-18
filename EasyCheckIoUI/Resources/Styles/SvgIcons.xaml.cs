@@ -1,4 +1,4 @@
-namespace TiaFrameworkUI.Resources.Styles;
+namespace EasyCheckIoUI.Resources.Styles;
 
 public partial class SvgIcons : ResourceDictionary
 {

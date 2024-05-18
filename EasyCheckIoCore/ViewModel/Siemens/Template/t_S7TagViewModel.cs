@@ -6,14 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TiaFrameworkCore.Shared._06_Enum;
-using TiaFrameworkCore.Shared._11_Contracts;
-using TiaFrameworkCore.Shared._80_Util;
-using TiaFrameworkCore.Siemens._13_Helper;
-using TiaFrameworkCore.Shared._03_DataBlock;
-using TiaFrameworkCore.Siemens._03_DataBlock;
+using EasyCheckIoCore.Shared._06_Enum;
+using EasyCheckIoCore.Shared._11_Contracts;
+using EasyCheckIoCore.Shared._80_Util;
+using EasyCheckIoCore.Siemens._13_Helper;
+using EasyCheckIoCore.Shared._03_DataBlock;
+using EasyCheckIoCore.Siemens._03_DataBlock;
 
-namespace TiaFrameworkCore.ViewModel
+namespace EasyCheckIoCore.ViewModel
 {
     public partial class t_S7TagViewModel : BaseViewModel
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TiaFrameworkCore.Shared._21_Command
+namespace EasyCheckIoCore.Shared._21_Command
 {
     public class AsyncRelayCommand : AsyncCommandBase
     {
