@@ -1,48 +1,64 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
-             x:Class="TiaFrameworkUI.View.t_NotificationView">
+<ContentView
+    x:Class="TiaFrameworkUI.View.t_NotificationView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources">
     <ContentView.Style>
         <Style TargetType="ContentView">
             <Style.Triggers>
-                <DataTrigger TargetType="ContentView" Binding="{Binding IsVisible}" Value="True">
+                <DataTrigger
+                    Binding="{Binding IsVisible}"
+                    TargetType="ContentView"
+                    Value="True">
                     <Setter Property="IsVisible" Value="True" />
                 </DataTrigger>
-                <DataTrigger TargetType="ContentView" Binding="{Binding IsVisible}" Value="False">
+                <DataTrigger
+                    Binding="{Binding IsVisible}"
+                    TargetType="ContentView"
+                    Value="False">
                     <Setter Property="IsVisible" Value="False" />
                 </DataTrigger>
-            </Style.Triggers> 
+            </Style.Triggers>
         </Style>
     </ContentView.Style>
     <Border>
         <Border.Style>
-            <Style TargetType="Border" >
+            <Style TargetType="Border">
                 <Style.Triggers>
-                    <DataTrigger TargetType="Border" Binding="{Binding IsError}" Value="True">
+                    <DataTrigger
+                        Binding="{Binding IsError}"
+                        TargetType="Border"
+                        Value="True">
                         <Setter Property="BackgroundColor" Value="red" />
                     </DataTrigger>
-                    <DataTrigger TargetType="Border" Binding="{Binding IsError}" Value="False">
+                    <DataTrigger
+                        Binding="{Binding IsError}"
+                        TargetType="Border"
+                        Value="False">
                         <Setter Property="BackgroundColor" Value="green" />
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
         </Border.Style>
         <Grid ColumnDefinitions="*,auto">
-            <Label Grid.Column="0"
-      HorizontalOptions="Center"
-      VerticalOptions="Center"
-      TextColor="White"
-      Text="{Binding Message}" />
+            <Label
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                Text="{Binding Message}"
+                TextColor="White"
+                VerticalOptions="Center" />
             <Button
-               Grid.Column="1" 
+                Grid.Column="1"
                 Padding="0"
-    Command="{Binding HideNotificationCommand}"
-    HorizontalOptions="End"                                   
-    Text="{x:Static rs:FASolidIcons.Xmark}"  FontFamily="FASolid" FontSize="25" TextColor="white"
-    Background="Transparent" >
-            </Button>
+                Background="Transparent"
+                Command="{Binding HideNotificationCommand}"
+                FontFamily="FASolid"
+                FontSize="25"
+                HorizontalOptions="End"
+                Text="{x:Static rs:FASolidIcons.Xmark}"
+                TextColor="white" />
         </Grid>
-        </Border>
-      
+    </Border>
+
 </ContentView>

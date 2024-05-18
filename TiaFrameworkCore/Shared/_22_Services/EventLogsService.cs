@@ -1,37 +1,54 @@
-﻿using System;
+﻿using SqlSugar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TiaFrameworkCore.Shared._11_Contracts;
 using TiaFrameworkCore.Shared._23_Store;
+using TiaFrameworkCore.Shared._03_Models;
+using Serilog;
 
 namespace TiaFrameworkCore.Shared._22_Services
 {
     public class EventLogsService : IEventLogsService
     {
-        #region Property
+        #region Fields
 
-        #region Injections
-        private readonly EventLogsStore _EventLogsStore;
+        private SystemEventLogStore SystemEventLogStore;
+
         #endregion
 
+        #region Property
+        public List<EventLogData> SystemEventLogList => SystemEventLogStore.Entity;
         #endregion
 
         #region ctr
-        public EventLogsService(EventLogsStore eventlogsstore)
+        public EventLogsService()
         {
-            _EventLogsStore = eventlogsstore;
+            SystemEventLogStore = new SystemEventLogStore();
         }
         #endregion
 
-        #region UpdateErrorMessage
-        public void UpdateErrorMessage(byte code, string message, string TypeError)
+        public void ReadSystemEventDB(string level)
         {
-            var NewEvent = new _03_DataBlock.EventMsg(code, message, TypeError, DateTime.Now);
-            _EventLogsStore.AddErrMsg(NewEvent);
+            SystemEventLogStore.ReadEventLogDatabase(level);
         }
-        #endregion
+
+        public void NextPageSystemEventDB(string level)
+        {
+            SystemEventLogStore.NextPage(level);
+        }
+
+        public void PreviewPageSystemEventDB(string level)
+        {
+            SystemEventLogStore.PreviewPage(level);
+        }
+
+        public void ClearPageSystemEventDB(string level)
+        {
+            SystemEventLogStore.Clear();
+        }
 
 
     }

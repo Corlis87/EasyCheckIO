@@ -25,7 +25,6 @@
             <Label 
                     Text="Conversion"
                     FontSize="Title"
-                    TextColor="{StaticResource BackgroundButtonColor}"
                     HorizontalTextAlignment="Center"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" />

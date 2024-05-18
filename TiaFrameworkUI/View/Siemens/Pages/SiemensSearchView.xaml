@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiaFrameworkUI.View.SiemensSearchView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TiaFrameworkUI.View"
+    xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
+    xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    x:Name="this"
+    Title="Searching">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:SelectedItemEventArgsConverter x:Key="ItemSelectedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid ColumnDefinitions="*" RowDefinitions="auto,*">
+        <Grid
+            Grid.Row="0"
+            Margin="5,5"
+            ColumnDefinitions="*,120"
+            RowDefinitions="auto">
+            <material:PickerField
+                Grid.Column="1"
+                AllowClear="False"
+                BorderColor="Transparent"
+                Icon="{FontImageSource FontFamily=FASolid,
+                                       Glyph={x:Static rs:FASolidIcons.Filter}}"
+                ItemsSource="{Binding Source=FilterType, Converter={StaticResource {x:Static rs:ConverterKeys.TextGraphToItemsourceValueConverter}}, Mode=TwoWay}"
+                SelectedItem="{Binding SelectedFilter, Converter={StaticResource {x:Static rs:ConverterKeys.TextGraphValueConverter}}, ConverterParameter=FilterType, Mode=TwoWay}"
+                TextColor="{AppThemeBinding {StaticResource OnBackground},
+                                            Dark={StaticResource OnBackgroundDark}}" />
+            <SearchBar Placeholder="Search Tag" Text="{Binding SearchText}">
+                <SearchBar.Behaviors>
+                    <toolkit:EventToCommandBehavior Command="{Binding Source={x:Reference this}, Path=BindingContext.SearchTagCommand}" EventName="SearchButtonPressed" />
+                </SearchBar.Behaviors>
+            </SearchBar>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <CollectionView
+                x:Name="listview"
+                ItemsSource="{Binding Path=Tags}"
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="vm:t_S7TagViewModel">
+                        <local:t_TagBoxView Padding="10" BindingContext="{Binding}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Grid>
+
+
+</ContentPage>

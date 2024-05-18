@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiaFrameworkUI.View.SiemensView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TiaFrameworkUI.View"
+    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources"
+    xmlns:vm="clr-namespace:TiaFrameworkCore.ViewModel;assembly=TiaFrameworkCore"
+    x:DataType="vm:SiemensViewModel">
+    <Shell.TitleView>
+        <Label
+            FontFamily="Strande2"
+            FontSize="Medium"
+            HeightRequest="50"
+            Text="Siemens"
+            TextColor="White"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center" />
+    </Shell.TitleView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <VerticalStackLayout Padding="10" Spacing="5">
+                <Grid ColumnDefinitions="*,*,*" ColumnSpacing="5">
+                    <Frame Padding="5" BorderColor="Transparent">
+                        <Grid
+                            ColumnDefinitions="Auto,Auto"
+                            ColumnSpacing="8"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="25"
+                                Text="{x:Static rs:FASolidIcons.Wifi}"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Column="1"
+                                Text="Plc"
+                                VerticalTextAlignment="Center" />
+                        </Grid>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding EditCommand}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                    <Frame
+                        Grid.Column="1"
+                        Padding="5"
+                        BorderColor="Transparent">
+                        <Grid
+                            ColumnDefinitions="Auto,Auto"
+                            ColumnSpacing="8"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="25"
+                                Text="{x:Static rs:FASolidIcons.FileImport}"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Column="1"
+                                Text="Import"
+                                VerticalTextAlignment="Center" />
+                        </Grid>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ImportTagsCommand}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                    <Frame
+                        Grid.Column="2"
+                        Padding="5"
+                        BorderColor="Transparent">
+                        <Grid
+                            ColumnDefinitions="Auto,Auto"
+                            ColumnSpacing="8"
+                            HorizontalOptions="Center">
+                            <Label
+                                FontFamily="FASolid"
+                                FontSize="25"
+                                Text="{x:Static rs:FASolidIcons.TrashCan}"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Column="1"
+                                Text="Clear All"
+                                VerticalTextAlignment="Center" />
+                        </Grid>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ClearAllCommand}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </Grid>
+                <BoxView StyleClass="Divider" />
+                <Button
+                    Command="{Binding AddCommand}"
+                    HorizontalOptions="Fill"
+                    StyleClass="FilledButton"
+                    Text="Add Variable" />
+            </VerticalStackLayout>
+        </Grid>
+        <Grid Grid.Row="1">
+            <local:t_PartialModulesCollectionView BindingContext="{Binding HwDeviceListPartialViewModel}" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Frame
+                Margin="5"
+                Padding="5"
+                BorderColor="Transparent">
+                <Grid
+                    ColumnDefinitions="Auto,Auto"
+                    ColumnSpacing="8"
+                    HorizontalOptions="Center">
+                    <Label
+                        FontFamily="FASolid"
+                        FontSize="25"
+                        Text="{x:Static rs:FASolidIcons.List}"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        Grid.Column="1"
+                        Text="Compile"
+                        VerticalTextAlignment="Center" />
+                </Grid>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CompilePageCommand}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+        </Grid>
+    </Grid>
+</ContentPage>

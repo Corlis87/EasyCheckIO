@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TiaFrameworkCore.Shared._06_Enum;
+using TiaFrameworkCore.Shared._80_Util;
 
 namespace TiaFrameworkCore.Shared._03_DataBlock
 {
@@ -37,30 +40,46 @@ namespace TiaFrameworkCore.Shared._03_DataBlock
         {
             IsSuccess = issuccess;
         }
-        public OperationResult(int code, string msg)
+        public OperationResult(bool issuccess, string message,eLogLevel logLevel)
         {
-            Code = code;
-            Message = msg;
+            IsSuccess = issuccess;
+            Message = message;
+            LoggerUtil.RegistLogMessage(logLevel, message);
         }
-        public OperationResult(int code, bool issuccess)
+        public OperationResult(bool issuccess, int code)
         {
             IsSuccess = issuccess;
             Code = code;
         }
-        public OperationResult(int code, string msg, bool issuccess)
+        public OperationResult(bool issuccess, int code, string message,eLogLevel logLevel)
         {
             IsSuccess = issuccess;
             Code = code;
-            Message = msg;
+            Message = message;
+            LoggerUtil.RegistLogMessage(logLevel, message);
         }
         #endregion
     }
 
     public class OperationResult<T> : OperationResult
     {
-        //
-        // Riepilogo:
-        //     用户自定义的泛型数据
+        public OperationResult() { }
+        public OperationResult(T content, bool isSuccess)
+        {
+            Content = content;
+            IsSuccess = isSuccess;
+        }
+        public OperationResult(T content, bool isSuccess, string message,eLogLevel logLevel)
+        {
+            Content = content;
+            IsSuccess = isSuccess;
+            Message = message;
+            LoggerUtil.RegistLogMessage(logLevel, message);
+        }
+
+
         public T Content { get; set; }
     }
+
 }
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TiaFrameworkUI.View.ExcelView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Excel">
+    <VerticalStackLayout>
+        <!--<Entry Text="{Binding FilePath}" />
+        <Button Command="{Binding ImportAllCommand}" Text="test" />-->
+        <Label Text="Working in progress..." />
+    </VerticalStackLayout>
+</ContentPage>

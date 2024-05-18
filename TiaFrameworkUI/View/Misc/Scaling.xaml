@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
-             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"  
-             xmlns:ctrl="clr-namespace:TiaFrameworkCtrls.Controls;assembly=TiaFrameworkCtrls"
-                  Title="MyPopupPage" BackgroundColor="#80000000" CloseWhenBackgroundIsClicked="True"
-                  x:Class="TiaFrameworkUI.View.Scaling" 
-                  >
+<mopups:PopupPage
+    x:Class="TiaFrameworkUI.View.Scaling"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ctrl="clr-namespace:TiaFrameworkCtrls.Controls;assembly=TiaFrameworkCtrls"
+    xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+    xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+    Title="MyPopupPage"
+    BackgroundColor="#80000000"
+    CloseWhenBackgroundIsClicked="True">
     <mopups:PopupPage.Animation>
         <mopupsanim:ScaleAnimation
             DurationIn="700"
@@ -16,55 +18,61 @@
             ScaleIn="1"
             ScaleOut="0.7" />
     </mopups:PopupPage.Animation>
-    <Border WidthRequest="300" HeightRequest="200"
-                Stroke="dimgray"
-                BackgroundColor="#EAEBEE"   
-                HorizontalOptions="Center">
+    <Border
+        BackgroundColor="#EAEBEE"
+        HeightRequest="200"
+        HorizontalOptions="Center"
+        Stroke="dimgray"
+        WidthRequest="300">
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="40,0,0,40"/>
+            <RoundRectangle CornerRadius="40,0,0,40" />
         </Border.StrokeShape>
-        <VerticalStackLayout Spacing="3" Padding="20">
-            <Label 
-                    Text="Scaling"
-                    FontSize="Title"
-                    HorizontalTextAlignment="Center"
+        <VerticalStackLayout
+            Padding="20"
+            BackgroundColor="{AppThemeBinding {StaticResource OnBackgroundDark},
+                                              Dark={StaticResource OnBackground}}"
+            Spacing="3">
+            <Label
+                FontSize="Title"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Text="Scaling"
+                VerticalOptions="Center" />
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Entry
                     HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Scale.iRaw}"
                     VerticalOptions="Center" />
-            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
                 <Entry
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"
                     HorizontalTextAlignment="Center"
-                    Text="{Binding Scale.iRaw}" />
-                <Entry
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HorizontalTextAlignment="Center"
-                    Text="{Binding Scale.fRaw}" />
+                    Text="{Binding Scale.fRaw}"
+                    VerticalOptions="Center" />
             </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                 <Entry
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center"
-                         HorizontalTextAlignment="Center"
-                    Text="{Binding Scale.iEng}" />
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Scale.iEng}"
+                    VerticalOptions="Center" />
                 <Entry
-                         HorizontalTextAlignment="Center"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center"
-                    Text="{Binding Scale.fEng}" />
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Scale.fEng}"
+                    VerticalOptions="Center" />
             </HorizontalStackLayout>
             <ctrl:ProgressBar
-                WidthRequest="100"
-                HeightRequest="20"
+                Margin="12"
                 EnableAnimations="False"
-                    Margin="12"
-                    IsVertical="False"
-                    ProgressBrush="dimgray"
-                    StrokeBrush="lightgray"
+                HeightRequest="20"
+                IsVertical="False"
                 MaximumValue="{Binding Scale.fEng}"
                 MinimumValue="{Binding Scale.iEng}"
-                    Progress="{Binding Scale.Eng,StringFormat='{}{0:F2}'}" />
+                Progress="{Binding Scale.Eng, StringFormat='{}{0:F2}'}"
+                ProgressBrush="dimgray"
+                StrokeBrush="lightgray"
+                WidthRequest="100" />
         </VerticalStackLayout>
     </Border>
 </mopups:PopupPage>

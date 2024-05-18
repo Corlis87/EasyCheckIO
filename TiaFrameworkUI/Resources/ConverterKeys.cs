@@ -12,6 +12,7 @@ namespace TiaFrameworkUI.Resources
         public const string TextGraphValueConverter = nameof(TextGraphValueConverter);
         public const string ByteToBitConverter = nameof(ByteToBitConverter);
         public const string TextColorValueConverter = nameof(TextColorValueConverter);
-        
+        public const string LoggerLevelToIconConverter = nameof(LoggerLevelToIconConverter);
+
     }
 }

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TiaFrameworkUI.Resources.Converters"
-                  xmlns:cv="clr-namespace:TiaFrameworkUI.Converters"
-                    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources" >
+<ResourceDictionary
+    x:Class="TiaFrameworkUI.Resources.Converters"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cv="clr-namespace:TiaFrameworkUI.Converters"
+    xmlns:rs="clr-namespace:TiaFrameworkUI.Resources">
 
     <cv:TextGraphToItemsourceValueConverter x:Key="TextGraphToItemsourceValueConverter" />
     <cv:TextGraphValueConverter x:Key="TextGraphValueConverter" />
     <cv:ByteToBitConverter x:Key="ByteToBitConverter" />
     <cv:TextColorValueConverter x:Key="TextColorValueConverter" />
+    <cv:LoggerLevelToIconConverter x:Key="LoggerLevelToIconConverter" />
 </ResourceDictionary>

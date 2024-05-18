@@ -73,7 +73,6 @@ namespace TiaFrameworkCore.Siemens._13_Helper
             }
 
         }
-
         public static object ReCreateData(S7Tag item, byte[][] buffer)
         {
             int ModuleType = 0;
@@ -110,7 +109,6 @@ namespace TiaFrameworkCore.Siemens._13_Helper
             s7Tag.Address = "" + S7Helper.CreateAddressAcronymFromIO(s7Tag.IO) + s7Tag.Byte + "." + s7Tag.Bit;
          //   s7Tag.Tag = new S7Consts.S7Tag { Area = (int)S7Helper.CreateS7Area(s7Tag.IO), DBNumber = 0, Start = _byte, Elements = 1, WordLen = (int)s7Tag.DataType };
             //  s7Tag.Buffer = S7Helper.CreateBufferSize(s7Tag.DataType);
-
         }
 
         public static string CreateAddressAcronymFromIO(eS7io eS7Io)
