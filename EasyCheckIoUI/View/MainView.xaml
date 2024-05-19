@@ -10,7 +10,7 @@
     Title="Home"
     x:DataType="vm:MainViewModel">
     <ContentPage.Resources>
-        <x:String x:Key="DocLink">https://corlis87.github.io/ZcheckIO/</x:String>
+        <x:String x:Key="DocLink">https://corlis87.github.io/docs/</x:String>
     </ContentPage.Resources>
     <Grid>
         <Grid.RowDefinitions>
