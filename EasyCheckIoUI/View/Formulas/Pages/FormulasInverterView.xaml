@@ -64,32 +64,6 @@
                         <Label FontAttributes="Bold" Text="Additional data" />
                     </uranium:ExpanderView.Header>
                     <VerticalStackLayout Margin="5,5" Spacing="5">
-                        <VerticalStackLayout>
-                            <Border>
-                                <VerticalStackLayout Margin="5">
-                                    <Label Text="HFI:" />
-                                    <Grid ColumnDefinitions="auto,auto" RowDefinitions="auto,auto">
-                                        <Label Text="1st Cylinder: 110 [Hz]" />
-                                        <Label
-                                            Grid.Column="1"
-                                            Margin="5,0"
-                                            Text="GearRatio: 62.9" />
-                                        <Label Grid.Row="1" Text="5st Cylinder: 65 [Hz]" />
-                                        <Label
-                                            Grid.Row="1"
-                                            Grid.Column="1"
-                                            Margin="5,0"
-                                            Text="GearRatio: 3.6842" />
-                                    </Grid>
-                                </VerticalStackLayout>
-                            </Border>
-                            <Border>
-                                <VerticalStackLayout Margin="5">
-                                    <Label Text="HOMEGA:" />
-                                    <Label Text="MainMotor: 110 [Hz]" />
-                                </VerticalStackLayout>
-                            </Border>
-                        </VerticalStackLayout>
                         <material:TextField
                             Title="Maximum Frequency"
                             Keyboard="Numeric"
