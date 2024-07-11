@@ -143,8 +143,6 @@ namespace EasyCheckIoCore.Siemens._03_DataBlock
             Address = "" + S7Helper.CreateAddressAcronymFromIO(IO) + Byte + "." + Bit;
             Notes = notes;
             Status = status;
-            //    base.Tag = new S7Consts.S7Tag { Area = (int)S7Helper.CreateS7Area(IO),DBNumber=0,Elements=1,Start=Byte,WordLen=(int)DataType };
-            // base.Buffer = S7Helper.CreateBufferSize(DataType);
         }
 
         #endregion

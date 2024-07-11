@@ -53,7 +53,7 @@
             <Label
                 Margin="0,5"
                 HorizontalOptions="End"
-                Text="Made By Corlis | Ver1.0.0" />
+                Text="Made By Corlis | Ver1.0.1" />
         </Grid>
     </Grid>
 </ContentPage>
