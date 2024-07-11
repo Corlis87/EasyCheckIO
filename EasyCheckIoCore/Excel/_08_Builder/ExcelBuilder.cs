@@ -10,6 +10,8 @@ using EasyCheckIoCore.Siemens._03_DataBlock;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.Maui.Storage;
 using EasyCheckIoCore.ViewModel;
+using Serilog;
+using EasyCheckIoCore.Shared._03_DataBlock;
 
 namespace EasyCheckIoCore.Excel._08_Builder
 {
@@ -115,7 +117,9 @@ namespace EasyCheckIoCore.Excel._08_Builder
             string[] str = new string[] { "Name", "Data Type", "Logical Address", "Comment" };
             foreach (var value in Values)
             {
-                var tag = new S7Tag();
+                try
+                {
+                    var tag = new S7Tag();
                 if (value.Cells[0].ColumnName == str[0])
                     tag.Name = value.Cells[0].Value.GetText();
                 if (value.Cells[1].ColumnName == str[1])
@@ -124,8 +128,14 @@ namespace EasyCheckIoCore.Excel._08_Builder
                     tag = value.Cells[2].Value.GetS7Io(tag);
                 if (value.Cells[3].ColumnName == str[3])
                     tag.Comment = value.Cells[3].Value.GetText();
-
-                list.Add(new S7Tag(tag.Name, tag.IO, tag.Byte, tag.Bit, tag.Comment, tag.DataType,"",0));
+ 
+                    list.Add(new S7Tag(tag.Name, tag.IO, tag.Byte, tag.Bit, tag.Comment, tag.DataType, "", 0));
+                }
+                catch (Exception ex)
+                {
+                    var a = new OperationResult(false,ex.Message +" Row: "+value.row, Shared._06_Enum.eLogLevel.Error);
+                }
+            
 
             }
             return list;
